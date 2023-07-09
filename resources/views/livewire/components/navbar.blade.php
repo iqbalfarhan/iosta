@@ -11,6 +11,9 @@
         <a class="btn btn-ghost normal-case text-xl">{{ config('app.name') }}</a>
     </div>
     <div class="flex-none">
-        @livewire('components.breadcrumb')
+        {{-- @livewire('components.breadcrumb') --}}
+        <div class="hidden lg:block mx-4 text-xs">
+            {{ auth()->user()->name }}
+        </div>
     </div>
 </div>

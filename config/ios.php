@@ -1,7 +1,7 @@
 <?php
 
 return [
-  'witels' => [
+  'listWitel' => [
     'REGIONAL',
     'BALIKPAPAN',
     'SAMARINDA',
@@ -15,7 +15,7 @@ return [
     'gudang terbuka',
     'gudang tertutup'
   ],
-  'listKategori' => [
+  'listKlasifikasi' => [
     "SO NON NTE",
     "SO IOAN",
     "FIBER ACADEMY",

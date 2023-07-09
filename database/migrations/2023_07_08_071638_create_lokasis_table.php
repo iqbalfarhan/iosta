@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->string('kota');
             $table->string('alamat')->nullable();
             $table->string('nama');
-            $table->enum('fungsi', config('ios.listFungsiGedung'))->nullable();
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }

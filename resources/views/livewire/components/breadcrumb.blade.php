@@ -1,6 +1,6 @@
-<div class="text-sm breadcrumbs mx-4">
+<div class="text-sm hidden lg:block breadcrumbs mx-4">
     <ul>
-        <li>App</li>
+        <li>{{ $witel }}</li>
         @foreach ($datas as $segment)
             <li>{{ ucwords($segment) }}</li>
         @endforeach

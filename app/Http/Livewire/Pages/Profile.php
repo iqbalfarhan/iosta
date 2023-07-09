@@ -11,7 +11,7 @@ class Profile extends Component
         'reload' => '$refresh'
     ];
     public $name;
-    public $email;
+    public $username;
     public $witel;
     public $user_id;
     public $initial;
@@ -20,13 +20,13 @@ class Profile extends Component
     {
         $valid = $this->validate([
             'name' => 'required',
-            'email' => 'required',
+            'username' => 'required',
             'witel' => 'required',
         ]);
 
         User::find($this->user_id)->update($valid);
 
-        return redirect()->route('profile');
+        $this->emit('reload');
     }
 
     public function mount()
@@ -34,7 +34,7 @@ class Profile extends Component
         $user = auth()->user();
 
         $this->name = $user->name;
-        $this->email = $user->email;
+        $this->username = $user->username;
         $this->witel = $user->witel;
         $this->user_id = $user->id;
         $this->initial = $user->initial;

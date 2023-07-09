@@ -8,14 +8,14 @@ use Livewire\Component;
 class Login extends Component
 {
     public $data = [
-        'email' => 'iqbalfarhan1996@gmail.com',
+        'username' => '196509',
         'password' => 'adminoke'
     ];
 
     public function submit()
     {
         $this->validate([
-            'data.email' => 'required',
+            'data.username' => 'required',
             'data.password' => 'required',
         ]);
 

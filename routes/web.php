@@ -5,6 +5,9 @@ use App\Http\Livewire\Pages\Profile;
 use App\Http\Livewire\Pages\Settings\Lokasi;
 use App\Http\Livewire\Pages\Settings\User;
 use App\Http\Livewire\Pages\Auth\Login;
+use App\Http\Livewire\Pages\ObjectSewa;
+use App\Http\Livewire\Pages\Settings\LokasiDetail;
+use App\Http\Livewire\Pages\Ubahdata;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,7 +31,10 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware('auth')->group(function () {
   Route::get('/home', Welcome::class)->name('home');
+  Route::get('/object-sewa', ObjectSewa::class)->name('object-sewa');
   Route::get('/profile', Profile::class)->name('profile');
+  Route::get('/ubahdata', Ubahdata::class)->name('ubahdata');
   Route::get('/setting/lokasi', Lokasi::class)->name('settings.lokasi');
+  Route::get('/setting/lokasi/{lokasi}', LokasiDetail::class)->name('settings.lokasi.detail');
   Route::get('/setting/user', User::class)->name('settings.user');
 });
