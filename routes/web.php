@@ -7,7 +7,9 @@ use App\Http\Livewire\Pages\Settings\User;
 use App\Http\Livewire\Pages\Auth\Login;
 use App\Http\Livewire\Pages\ObjectSewa;
 use App\Http\Livewire\Pages\Settings\LokasiDetail;
+use App\Http\Livewire\Pages\Settings\Periode;
 use App\Http\Livewire\Pages\Ubahdata;
+use App\Http\Livewire\Pages\UploadBa;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,7 +36,9 @@ Route::middleware('auth')->group(function () {
   Route::get('/object-sewa', ObjectSewa::class)->name('object-sewa');
   Route::get('/profile', Profile::class)->name('profile');
   Route::get('/ubahdata', Ubahdata::class)->name('ubahdata');
+  Route::get('/upload-ba', UploadBa::class)->name('upload-ba');
+  Route::get('/setting/user', User::class)->name('settings.user');
+  Route::get('/setting/periode', Periode::class)->name('settings.periode');
   Route::get('/setting/lokasi', Lokasi::class)->name('settings.lokasi');
   Route::get('/setting/lokasi/{lokasi}', LokasiDetail::class)->name('settings.lokasi.detail');
-  Route::get('/setting/user', User::class)->name('settings.user');
 });

@@ -1,13 +1,15 @@
 <div class="flex flex-col gap-6">
-    <input type="text" placeholder="Cari user dengan nama, email, username atau witel" class="input w-full" />
+    <input type="text" placeholder="Cari object sewa dengan gedung, fungsi, klasifikasi atau nama peruntukan"
+        class="input w-full" />
     <div class="flex flex-col gap-3">
         <span class="text-xs text-base-content">Data yang ditampilkan disesuaikan dengan area anda :
-            {{ auth()->user()->witel }}</span>
+            <b>{{ auth()->user()->witel }}</b></span>
         <div class="overflow-x-auto bg-base-100 rounded-xl">
             <table class="table">
                 <thead>
                     <tr class="bg-base-300">
                         <th></th>
+                        <th>Witel</th>
                         <th>Gedung</th>
                         <th>Fungsi</th>
                         <th>Luas</th>
@@ -20,6 +22,7 @@
                     @foreach ($datas as $key => $item)
                         <tr>
                             <th>{{ $key + 1 }}</th>
+                            <td>{{ $item->lokasi->witel }}</td>
                             <td>{{ $item->lokasi->nama }}</td>
                             <td>{{ $item->fungsi }}</td>
                             <td>{{ $item->luas }}</td>
@@ -28,13 +31,6 @@
                             <td>
                                 <button class="btn btn-xs btn-circle btn-ghost">
                                     @livewire('icons.edit')
-                                </button>
-                                <button class="btn btn-xs btn-circle btn-ghost">
-                                    @livewire('icons.download')
-                                </button>
-                                <button class="btn btn-xs btn-circle btn-ghost"
-                                    wire:click.prevent="hapusPeruntukan({{ $item->id }})">
-                                    @livewire('icons.close')
                                 </button>
                             </td>
                         </tr>

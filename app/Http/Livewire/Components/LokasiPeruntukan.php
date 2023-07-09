@@ -13,18 +13,44 @@ class LokasiPeruntukan extends Component
     ];
 
     public $show = true;
+    public $template;
     public $lokasi;
     public $fungsi;
     public $klasifikasi;
     public $peruntukan;
     public $luas;
     public $status = 'EXISTING';
-    public $durasi = 3;
-    public $layanan = 4;
+    public $durasi;
+    public $layanan;
 
     public function toggleShow()
     {
         $this->show = !$this->show;
+    }
+
+    public function updatedTemplate($text)
+    {
+        $parts = preg_split('/\t+/', $text);
+
+        if ($text) {
+            $this->fungsi = strtolower($parts[0]) ?? "";
+            $this->luas = str_replace(',', '.', $parts[1]) ?? "";
+            $this->klasifikasi = $parts[4] ?? "";
+            $this->peruntukan = $parts[5] ?? "";
+            $this->status = $parts[6] ?? "EXISTING";
+            $this->durasi = $parts[9] ?? 3;
+            $this->layanan = $parts[10] ?? 4;
+        } else {
+            $this->reset([
+                'fungsi',
+                'luas',
+                'klasifikasi',
+                'peruntukan',
+                'status',
+                'durasi',
+                'layanan',
+            ]);
+        }
     }
 
     public function mount(Lokasi $lokasi)
@@ -47,6 +73,7 @@ class LokasiPeruntukan extends Component
         $valid['lokasi_id'] = $this->lokasi->id;
         Peruntukan::create($valid);
         $this->toggleShow();
+        $this->emit('reload');
     }
 
     public function render()

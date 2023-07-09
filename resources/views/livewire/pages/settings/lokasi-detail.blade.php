@@ -1,4 +1,22 @@
 <div class="flex flex-col gap-6">
+    <div class="card card-compact bg-base-100">
+        <div class="card-body">
+            <div class="flex gap-3 items-center">
+                <div class="avatar placeholder">
+                    <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
+                        <span>MX</span>
+                    </div>
+                </div>
+                <div class="flex flex-1 flex-col">
+                    <div class="font-semibold">{{ $data->nama }} - {{ $data->witel }}</div>
+                    <div class="text-xs">{{ $data->alamat }}</div>
+                </div>
+                <button class="btn btn-ghost btn-sm">
+                    @livewire('icons.edit') edit
+                </button>
+            </div>
+        </div>
+    </div>
     <div class="flex flex-col gap-3">
         <div class="flex justify-between">
             <h3 class="font-semibold">Peruntukan gedung:</h3>
@@ -32,13 +50,13 @@
                             <td>{{ $item->layanan }}</td>
                             <td>
                                 <button class="btn btn-xs btn-circle btn-ghost">
-                                    @livewire('icons.edit')
+                                    @livewire('icons.edit', key(uniqId()))
                                 </button>
                                 <button class="btn btn-xs btn-circle btn-ghost">
-                                    @livewire('icons.download')
+                                    @livewire('icons.download', key(uniqId()))
                                 </button>
                                 <button class="btn btn-xs btn-circle btn-ghost">
-                                    @livewire('icons.close')
+                                    @livewire('icons.close', key(uniqId()))
                                 </button>
                             </td>
                         </tr>

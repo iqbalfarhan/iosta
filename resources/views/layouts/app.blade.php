@@ -9,7 +9,7 @@
     @livewireStyles
 </head>
 
-<body>
+<body data-theme="light">
     @auth
         <div class="drawer lg:drawer-open bg-base-200">
             <input id="drawer" type="checkbox" class="drawer-toggle" />
@@ -19,6 +19,7 @@
                 <div
                     class="flex flex-1 flex-col p-6 gap-6 bg-[url(http://127.0.0.1:8000/img/indonesia.svg)] bg-no-repeat bg-center bg-cover">
                     {{ $slot }}
+                    @livewire('components.footer')
                 </div>
             </div>
             <div class="drawer-side">

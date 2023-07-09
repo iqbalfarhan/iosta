@@ -19,7 +19,7 @@ class Ubahdata extends Component
     public function render()
     {
         return view('livewire.pages.ubahdata', [
-            'gedungs' => Lokasi::get()->pluck('nama', 'id'),
+            'gedungs' => Lokasi::where('witel', auth()->user()->witel)->get()->pluck('nama', 'id'),
             'peruntukans' => $this->lokasi ? $this->lokasi->peruntukans->pluck('peruntukan', 'id') : null,
         ]);
     }
