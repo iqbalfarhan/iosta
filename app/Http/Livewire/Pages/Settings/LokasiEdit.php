@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Pages\Settings;
 
+use Intervention\Image\Facades\Image;
 use App\Models\Lokasi;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
@@ -49,11 +50,22 @@ class LokasiEdit extends Component
             "eviden" => '',
         ]);
 
+        $photo = $this->photo;
+
         if ($this->eviden) {
-            $this->eviden->store('lokasi');
+            $gambar = $this->eviden;
+
             if ($this->photo != null) {
                 Storage::delete($this->photo);
             }
+
+            $photo = $gambar->hashName("lokasi");
+            $image = Image::make($gambar)->resize(500, 500, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+
+            Storage::put($photo, (string) $image->encode());
         }
 
         $this->data->update([
@@ -61,7 +73,7 @@ class LokasiEdit extends Component
             'kota' => $this->kota,
             'alamat' => $this->alamat,
             'nama' => $this->nama,
-            'photo' => $this->eviden ? $this->eviden->hashName('lokasi') : $this->photo,
+            'photo' => $photo,
         ]);
 
         $this->emit('reload');
