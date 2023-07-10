@@ -31,7 +31,16 @@
                         <td>{{ $data->witel }}</td>
                         <td>{{ $data->kota }}</td>
                         <td>{{ $data->alamat }}</td>
-                        <td>{{ $data->nama }}</td>
+                        <td>
+                            <div class="flex items-center gap-2">
+                                <div class="avatar">
+                                    <div class="w-4 rounded-full">
+                                        <img src="{{ $data->gambar }}" />
+                                    </div>
+                                </div>
+                                {{ $data->nama }}
+                            </div>
+                        </td>
                         <td>{{ $data->peruntukans_count }}</td>
                         <td>
                             <a href="{{ route('settings.lokasi.detail', $data->id) }}"

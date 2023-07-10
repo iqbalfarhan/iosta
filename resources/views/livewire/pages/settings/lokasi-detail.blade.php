@@ -2,16 +2,16 @@
     <div class="card card-compact bg-base-100">
         <div class="card-body">
             <div class="flex gap-3 items-center">
-                <div class="avatar placeholder">
-                    <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
-                        <span>MX</span>
+                <div class="avatar">
+                    <div class="w-12 rounded-full">
+                        <img src="{{ $data->gambar }}" />
                     </div>
                 </div>
                 <div class="flex flex-1 flex-col">
                     <div class="font-semibold">{{ $data->nama }} - {{ $data->witel }}</div>
                     <div class="text-xs">{{ $data->alamat }}</div>
                 </div>
-                <button class="btn btn-ghost btn-sm">
+                <button class="btn btn-ghost btn-sm" wire:click.prevent="$emit('toggleEditLokasiModal')">
                     @livewire('icons.edit') edit
                 </button>
             </div>
@@ -52,9 +52,12 @@
                                 <button class="btn btn-xs btn-circle btn-ghost">
                                     @livewire('icons.edit', key(uniqId()))
                                 </button>
-                                <button class="btn btn-xs btn-circle btn-ghost">
-                                    @livewire('icons.download', key(uniqId()))
-                                </button>
+                                @if ($item->fileba)
+                                    <a href="{{ Storage::url($item->fileba) }}"
+                                        class="btn btn-xs btn-circle btn-ghost">
+                                        @livewire('icons.download', key(uniqId()))
+                                    </a>
+                                @endif
                                 <button class="btn btn-xs btn-circle btn-ghost">
                                     @livewire('icons.close', key(uniqId()))
                                 </button>
@@ -74,4 +77,5 @@
     </div>
 
     @livewire('components.lokasi-peruntukan', ['lokasi' => $data->id])
+    @livewire('pages.settings.lokasi-edit', ['lokasi' => $data->id])
 </div>

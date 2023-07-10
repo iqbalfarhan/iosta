@@ -24,6 +24,11 @@ class CreateLokasi extends Component
         $this->show = !$this->show;
     }
 
+    public function mount()
+    {
+        $this->witel = auth()->user()->witel;
+    }
+
     public function simpan()
     {
         $valid = $this->validate([
@@ -31,7 +36,6 @@ class CreateLokasi extends Component
             'kota' => 'required',
             'alamat' => 'required',
             'nama' => 'required',
-            'fungsi' => 'required',
         ]);
 
         Lokasi::create($valid);
@@ -41,7 +45,6 @@ class CreateLokasi extends Component
             'kota',
             'alamat',
             'nama',
-            'fungsi',
         ]);
 
         $this->emit('reload');

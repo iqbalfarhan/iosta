@@ -15,6 +15,7 @@
                         <th>Luas</th>
                         <th>klasifikasi</th>
                         <th>Penggunaan</th>
+                        <th>BA Rekon</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -28,6 +29,11 @@
                             <td>{{ $item->luas }}</td>
                             <td>{{ $item->klasifikasi }}</td>
                             <td>{{ $item->peruntukan }}</td>
+                            <td>
+                                @if ($item->fileba)
+                                    <button class="btn btn-xs btn-ghost">Download BA</button>
+                                @endif
+                            </td>
                             <td>
                                 <button class="btn btn-xs btn-circle btn-ghost">
                                     @livewire('icons.edit')

@@ -20,6 +20,7 @@ return new class extends Migration {
             $table->string('status')->nullable();
             $table->string('durasi')->nullable();
             $table->string('layanan')->nullable();
+            $table->string('fileba')->nullable();
             $table->timestamps();
         });
     }

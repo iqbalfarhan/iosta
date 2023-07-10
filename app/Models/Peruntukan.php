@@ -18,6 +18,7 @@ class Peruntukan extends Model
         'status',
         'durasi',
         'layanan',
+        'fileba',
     ];
 
     public function lokasi()
