@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\BaRekon;
 use App\Http\Livewire\Pages\Welcome;
 use App\Http\Livewire\Pages\Profile;
 use App\Http\Livewire\Pages\Settings\Lokasi;
@@ -34,6 +35,7 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware('auth')->group(function () {
   Route::get('/home', Welcome::class)->name('home');
+  Route::get('/ba-rekon', BaRekon::class)->name('ba-rekon');
   Route::get('/object-sewa', ObjectSewa::class)->name('object-sewa');
   Route::get('/profile', Profile::class)->name('profile');
   Route::get('/ubahdata', Ubahdata::class)->name('ubahdata');

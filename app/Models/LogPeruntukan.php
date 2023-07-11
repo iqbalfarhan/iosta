@@ -48,4 +48,13 @@ class LogPeruntukan extends Model
     {
         return $this->peruntukan->lokasi;
     }
+
+    public function getQNameAttribute()
+    {
+        $ceil = date('n', strtotime($this->created_at));
+        $qnum = ceil($ceil / 3);
+
+        return 'Q' . $qnum;
+
+    }
 }

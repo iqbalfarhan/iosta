@@ -19,11 +19,11 @@
             <div class="stat-desc">{{ \App\Models\Peruntukan::count() }} Klasifikasi</div>
         </div>
 
-        <div class="stat bg-base-100 rounded-xl">
+        <a href="{{ route('ba-rekon') }}" class="stat bg-base-100 rounded-xl">
             <div class="stat-title">BA rekon terupload</div>
-            <div class="stat-value">23</div>
+            <div class="stat-value">{{ \App\Models\LogPeruntukan::whereNotNull('fileba')->count() }}</div>
             <div class="stat-desc">↗︎ 400 (22%)</div>
-        </div>
+        </a>
     </div>
 
     @livewire('pages.object-sewa')
