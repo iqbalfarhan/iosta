@@ -32,10 +32,13 @@ class PeruntukanObserver
     {
         $oldata = [
             'peruntukan_id' => $peruntukan->id,
-            'luas' => $peruntukan->getOriginal('luas'),
-            'klasifikasi' => $peruntukan->getOriginal('klasifikasi'),
-            'peruntukan' => $peruntukan->getOriginal('peruntukan'),
-            'fileba' => $peruntukan->getOriginal('fileba'),
+            'luas_awal' => $peruntukan->getOriginal('luas'),
+            'luas_baru' => $peruntukan->luas,
+            'klasifikasi_awal' => $peruntukan->getOriginal('klasifikasi'),
+            'klasifikasi_baru' => $peruntukan->klasifikasi,
+            'peruntukan_awal' => $peruntukan->getOriginal('peruntukan'),
+            'peruntukan_baru' => $peruntukan->peruntukan,
+            'fileba' => $peruntukan->fileba,
         ];
 
         LogPeruntukan::create($oldata);

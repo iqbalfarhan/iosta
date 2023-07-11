@@ -13,9 +13,12 @@ return new class extends Migration {
         Schema::create('log_peruntukans', function (Blueprint $table) {
             $table->id();
             $table->foreignId('peruntukan_id')->constrained()->cascadeOnDelete();
-            $table->string('luas')->nullable();
-            $table->string('klasifikasi')->nullable();
-            $table->string('peruntukan')->nullable();
+            $table->string('luas_awal')->nullable();
+            $table->string('luas_baru')->nullable();
+            $table->string('klasifikasi_awal')->nullable();
+            $table->string('klasifikasi_baru')->nullable();
+            $table->string('peruntukan_awal')->nullable();
+            $table->string('peruntukan_baru')->nullable();
             $table->string('fileba')->nullable();
             $table->timestamps();
         });

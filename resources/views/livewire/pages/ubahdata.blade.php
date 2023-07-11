@@ -12,7 +12,7 @@
                 @if ($lokasi)
                     <select class="select bg-base-200 @error('peruntukan') select-error @enderror"
                         wire:model="peruntukan">
-                        <option value="">Pilih</option>
+                        <option value="">Pilih peruntukan</option>
                         @foreach ($peruntukans as $key => $item)
                             <option value="{{ $key }}">{{ $item }}</option>
                         @endforeach

@@ -65,7 +65,8 @@ class Ubahdata extends Component
 
         $data->update([
             'fileba' => $filename,
-            'luas' => $this->luas
+            'luas' => $this->luas,
+            'klasifikasi' => $this->jenis
         ]);
 
         return redirect()->route('home');

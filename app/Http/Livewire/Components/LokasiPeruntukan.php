@@ -12,7 +12,8 @@ class LokasiPeruntukan extends Component
         'toggleShow'
     ];
 
-    public $show = true;
+    public $view = 'basic';
+    public $show = false;
     public $template;
     public $lokasi;
     public $fungsi;
@@ -56,7 +57,6 @@ class LokasiPeruntukan extends Component
     public function mount(Lokasi $lokasi)
     {
         $this->lokasi = $lokasi;
-        $this->show = $lokasi->peruntukans->count() == 0 ? true : false;
     }
 
     public function simpan(): void

@@ -51,16 +51,20 @@
                             <td>{{ $item->durasi }} bulan</td>
                             <td>{{ $item->layanan }}</td>
                             <td>
-                                <button class="btn btn-xs">Download</button>
+                                @if ($item->fileba)
+                                    <button class="btn btn-xs"
+                                        wire:click.prevent="downloadba('{{ $item->id }}')">Download</button>
+                                @endif
                             </td>
                             <td>
                                 <button class="btn btn-xs">BA BR</button>
                                 <button class="btn btn-xs">BA SC</button>
                             </td>
                             <td>
-                                <button class="btn btn-xs btn-circle btn-ghost">
+                                <a href="{{ route('peruntukan.show', $item->id) }}"
+                                    class="btn btn-xs btn-circle btn-ghost">
                                     @livewire('icons.list-bullet', key(uniqId()))
-                                </button>
+                                </a>
                                 <button class="btn btn-xs btn-circle btn-ghost">
                                     @livewire('icons.close', key(uniqId()))
                                 </button>
@@ -71,39 +75,7 @@
             </table>
         </div>
     </div>
-    <div class="flex flex-col gap-3">
-        <h3 class="font-semibold">Riwayat perubahan:</h3>
-        <div class="overflow-x-auto bg-base-100 rounded-xl">
-            <table class="table table-xs">
-                <thead>
-                    <tr class="bg-base-300">
-                        <th></th>
-                        <th>luas sebelum</th>
-                        <th>klasifikasi</th>
-                        <th>peruntukan</th>
-                        <th>fileba</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($data->logs as $log)
-                        <tr>
-                            <td>{{ $log->id }}</td>
-                            <td>{{ $log->luas }}</td>
-                            <td>{{ $log->klasifikasi }}</td>
-                            <td>{{ $log->peruntukan }}</td>
-                            <td>
-                                {{-- {{ $log->fileba }} --}}
-                                <button class="btn btn-xs">
-                                    download
-                                </button>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
-    </div>
+    @livewire('peruntukan.show', ['peruntukan' => $data->id])
 
     @livewire('components.lokasi-peruntukan', ['lokasi' => $data->id])
     @livewire('pages.settings.lokasi-edit', ['lokasi' => $data->id])

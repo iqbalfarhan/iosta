@@ -25,7 +25,7 @@
                             <th>{{ $key + 1 }}</th>
                             <td>{{ $item->lokasi->witel }}</td>
                             <td>
-                                <a href="{{ route('settings.lokasi.detail', $item) }}"
+                                <a href="{{ route('settings.lokasi.detail', $item->lokasi->id) }}"
                                     class="btn btn-xs gap-2 btn-ghost">
                                     <div class="avatar">
                                         <div class="w-4 rounded-full">
@@ -37,11 +37,12 @@
                             </td>
                             <td>{{ $item->fungsi }}</td>
                             <td>
-                                <div class="tooltip cursor-pointer" data-tip="Diff {{ $item->luasStatus()['diff'] }}">
+                                <a href="{{ route('peruntukan.show', $item) }}" class="tooltip cursor-pointer"
+                                    data-tip="Selisih {{ $item->luasStatus()['diff'] }}">
                                     <span
                                         class="text-{{ $item->luasstatus()['color'] }}">{{ $item->luasstatus()['symbol'] }}</span>
                                     {{ $item->luas }}
-                                </div>
+                                </a>
                             </td>
                             <td>{{ $item->klasifikasi }}</td>
                             <td>{{ $item->peruntukan }}</td>

@@ -3,6 +3,8 @@
 namespace App\Http\Livewire\Pages\Settings;
 
 use App\Models\Lokasi;
+use App\Models\Peruntukan;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 
 class LokasiDetail extends Component
@@ -18,9 +20,15 @@ class LokasiDetail extends Component
         $this->data = $lokasi;
     }
 
-    public function back()
+    public function downloadba(Peruntukan $peruntukan)
     {
-        return redirect()->route('settings.lokasi');
+        $filename = implode(" ", [
+            $peruntukan->lokasi->nama,
+            '-',
+            $peruntukan->peruntukan,
+        ]);
+
+        return Storage::download($peruntukan->fileba, $filename);
     }
 
     public function render()
