@@ -13,10 +13,15 @@
                         <th>Gedung</th>
                         <th>Fungsi</th>
                         <th>Luas</th>
-                        <th>BR</th>
-                        <th>SC</th>
+                        <th class="bg-green-200">BR</th>
+                        <th class="bg-red-200">SC</th>
                         <th>klasifikasi</th>
                         <th>Peruntukan</th>
+                        <th>Status</th>
+                        <th>Awal</th>
+                        <th>Akhir</th>
+                        <th>Durasi</th>
+                        <th>Layanan</th>
                         {{-- <th>Download Excel</th>
                         <th>Edit</th> --}}
                     </tr>
@@ -50,6 +55,11 @@
                             <td>{{ $item->sc }}</td>
                             <td>{{ $item->klasifikasi }}</td>
                             <td>{{ $item->peruntukan }}</td>
+                            <td>{{ $item->status }}</td>
+                            <td>01 Juli 2023</td>
+                            <td>30 September 2023</td>
+                            <td>{{ $item->durasi }}</td>
+                            <td>{{ $item->layanan }}</td>
                             {{-- <td>
                                 <button class="btn btn-xs">Download</button>
                             </td>

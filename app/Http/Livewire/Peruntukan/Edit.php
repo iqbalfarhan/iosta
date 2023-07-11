@@ -78,7 +78,6 @@ class Edit extends Component
         $this->status = $peruntukan->status;
         $this->durasi = $peruntukan->durasi;
         $this->layanan = $peruntukan->layanan;
-        $this->fileba = $peruntukan->fileba;
     }
 
     public function render()

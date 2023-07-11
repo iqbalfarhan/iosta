@@ -45,19 +45,19 @@
                 <label for="" class="label">
                     <span class="label-text">Luas perhitungan</span>
                 </label>
-                <input type="text" wire:model="luas" placeholder="luas" class="input bg-base-200" />
+                <input type="number" step="0.001" wire:model="luas" placeholder="luas" class="input bg-base-200" />
             </div>
             <div class="form-control">
                 <label for="" class="label">
                     <span class="label-text">Luas Base Rent (BR)</span>
                 </label>
-                <input type="text" wire:model="br" placeholder="br" class="input bg-base-200" />
+                <input type="number" step="0.001" wire:model="br" placeholder="br" class="input bg-base-200" />
             </div>
             <div class="form-control">
                 <label for="" class="label">
                     <span class="label-text">Luas Service charge (SC)</span>
                 </label>
-                <input type="text" wire:model="sc" placeholder="sc" class="input bg-base-200" />
+                <input type="number" step="0.001" wire:model="sc" placeholder="sc" class="input bg-base-200" />
             </div>
             <div class="form-control">
                 <label for="" class="label">
@@ -72,13 +72,13 @@
                 <label for="" class="label">
                     <span class="label-text">durasi</span>
                 </label>
-                <input type="text" wire:model="durasi" placeholder="durasi" class="input bg-base-200" />
+                <input type="number" wire:model="durasi" placeholder="durasi" class="input bg-base-200" />
             </div>
             <div class="form-control">
                 <label for="" class="label">
                     <span class="label-text">layanan</span>
                 </label>
-                <input type="text" wire:model="layanan" placeholder="layanan" class="input bg-base-200" />
+                <input type="number" wire:model="layanan" placeholder="layanan" class="input bg-base-200" />
             </div>
             <div class="form-control">
                 <label for="" class="label">
