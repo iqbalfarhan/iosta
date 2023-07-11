@@ -15,6 +15,8 @@ class Peruntukan extends Model
         'klasifikasi',
         'peruntukan',
         'luas',
+        'br',
+        'sc',
         'status',
         'durasi',
         'layanan',

@@ -20,6 +20,12 @@ class LokasiDetail extends Component
         $this->data = $lokasi;
     }
 
+    public function hapusPeruntukan(Peruntukan $peruntukan)
+    {
+        $peruntukan->delete();
+        $this->emit('reload');
+    }
+
     public function downloadba(Peruntukan $peruntukan)
     {
         $filename = implode(" ", [

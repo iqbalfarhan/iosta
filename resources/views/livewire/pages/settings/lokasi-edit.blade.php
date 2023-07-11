@@ -9,18 +9,15 @@
                     @foreach (config('ios.listWitel') as $wtl)
                         <option value="{{ $wtl }}">{{ $wtl }}</option>
                     @endforeach
-
                 </select>
                 <input type="text" wire:model="kota" placeholder="kota" class="input bg-base-200 w-full" />
                 <input type="text" wire:model="alamat" placeholder="alamat" class="input bg-base-200 w-full" />
                 <input type="text" wire:model="nama" placeholder="nama" class="input bg-base-200 w-full" />
-
                 <div class="avatar">
                     <div class="w-12 rounded-full">
                         <img src="{{ Storage::url($photo) }}" />
                     </div>
                 </div>
-
                 <input type="file" wire:model="eviden" placeholder="eviden" class="file-input bg-base-200 w-full"
                     accept="image/*" />
             </div>

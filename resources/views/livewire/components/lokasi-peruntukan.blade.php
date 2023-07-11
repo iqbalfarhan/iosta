@@ -20,6 +20,8 @@
                         @endforeach
                     </select>
                     <input wire:model="luas" placeholder="luas" class="input bg-base-200 w-full" />
+                    <input wire:model="br" placeholder="br" class="input bg-base-200 w-full" />
+                    <input wire:model="sc" placeholder="sc" class="input bg-base-200 w-full" />
                     <select wire:model="klasifikasi" placeholder="klasifikasi" class="select bg-base-200 w-full">
                         <option value="">Pilih klasifikasi</option>
                         @foreach (config('ios.listKlasifikasi') as $qw)
@@ -45,6 +47,8 @@
                         <ul>
                             <li>fungsi = {{ strtolower($parts[0]) ?? '' }}</li>
                             <li>luas = {{ str_replace(',', '.', $parts[1]) ?? '' }}</li>
+                            <li>br = {{ $parts[2] ?? '' }}</li>
+                            <li>sc = {{ $parts[3] ?? '' }}</li>
                             <li>klasifikasi = {{ $parts[4] ?? '' }}</li>
                             <li>peruntukan = {{ $parts[5] ?? '' }}</li>
                             <li>status = {{ $parts[6] ?? 'EXISTING' }}</li>

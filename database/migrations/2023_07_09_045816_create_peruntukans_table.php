@@ -17,6 +17,8 @@ return new class extends Migration {
             $table->enum('klasifikasi', config('ios.listKlasifikasi'));
             $table->string('peruntukan');
             $table->string('luas')->nullable();
+            $table->string('br')->nullable();
+            $table->string('sc')->nullable();
             $table->string('status')->nullable();
             $table->string('durasi')->nullable();
             $table->string('layanan')->nullable();

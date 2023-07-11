@@ -29,13 +29,14 @@
                         <th></th>
                         <th>Fungsi</th>
                         <th>Luas</th>
+                        <th>BR</th>
+                        <th>SC</th>
                         <th>klasifikasi</th>
                         <th>peruntukan</th>
                         <th>status</th>
                         <th>Durasi</th>
                         <th>kelas layanan</th>
-                        <th>Download</th>
-                        <th>Edit</th>
+                        <th>BA Rekon</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -45,6 +46,8 @@
                             <th>{{ $key + 1 }}</th>
                             <td>{{ $item->fungsi }}</td>
                             <td>{{ $item->luas }}</td>
+                            <td>{{ $item->br }}</td>
+                            <td>{{ $item->sc }}</td>
                             <td>{{ $item->klasifikasi }}</td>
                             <td>{{ $item->peruntukan }}</td>
                             <td>{{ $item->status }}</td>
@@ -57,15 +60,16 @@
                                 @endif
                             </td>
                             <td>
-                                <button class="btn btn-xs">BA BR</button>
-                                <button class="btn btn-xs">BA SC</button>
-                            </td>
-                            <td>
+                                <a href="{{ route('peruntukan.edit', $item->id) }}"
+                                    class="btn btn-xs btn-circle btn-ghost">
+                                    @livewire('icons.edit', key(uniqId()))
+                                </a>
                                 <a href="{{ route('peruntukan.show', $item->id) }}"
                                     class="btn btn-xs btn-circle btn-ghost">
                                     @livewire('icons.list-bullet', key(uniqId()))
                                 </a>
-                                <button class="btn btn-xs btn-circle btn-ghost">
+                                <button class="btn btn-xs btn-circle btn-ghost"
+                                    wire:click.prevent="hapusPeruntukan({{ $item->id }})">
                                     @livewire('icons.close', key(uniqId()))
                                 </button>
                             </td>
@@ -75,9 +79,6 @@
             </table>
         </div>
     </div>
-    @if ($data->logs->count() != 0)
-        @livewire('peruntukan.show', ['peruntukan' => $data->id])
-    @endif
 
     @livewire('components.lokasi-peruntukan', ['lokasi' => $data->id])
     @livewire('pages.settings.lokasi-edit', ['lokasi' => $data->id])

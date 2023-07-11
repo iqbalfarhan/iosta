@@ -16,6 +16,8 @@ class LokasiPeruntukan extends Component
     public $show = false;
     public $template;
     public $lokasi;
+    public $br;
+    public $sc;
     public $fungsi;
     public $klasifikasi;
     public $peruntukan;
@@ -36,6 +38,9 @@ class LokasiPeruntukan extends Component
         if ($text) {
             $this->fungsi = strtolower($parts[0]) ?? "";
             $this->luas = str_replace(',', '.', $parts[1]) ?? "";
+            $this->br = $parts[2] ?? "";
+            $this->sc = $parts[3] ?? "";
+            $this->klasifikasi = $parts[4] ?? "";
             $this->klasifikasi = $parts[4] ?? "";
             $this->peruntukan = $parts[5] ?? "";
             $this->status = $parts[6] ?? "EXISTING";
@@ -66,6 +71,8 @@ class LokasiPeruntukan extends Component
             'klasifikasi' => 'required',
             'peruntukan' => 'required',
             'luas' => 'required',
+            'br' => '',
+            'sc' => '',
             'status' => 'required',
             'durasi' => 'required',
             'layanan' => 'required',

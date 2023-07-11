@@ -13,10 +13,12 @@
                         <th>Gedung</th>
                         <th>Fungsi</th>
                         <th>Luas</th>
+                        <th>BR</th>
+                        <th>SC</th>
                         <th>klasifikasi</th>
                         <th>Peruntukan</th>
-                        <th>Download Excel</th>
-                        <th>Edit</th>
+                        {{-- <th>Download Excel</th>
+                        <th>Edit</th> --}}
                     </tr>
                 </thead>
                 <tbody>
@@ -44,9 +46,11 @@
                                     {{ $item->luas }}
                                 </a>
                             </td>
+                            <td>{{ $item->br }}</td>
+                            <td>{{ $item->sc }}</td>
                             <td>{{ $item->klasifikasi }}</td>
                             <td>{{ $item->peruntukan }}</td>
-                            <td>
+                            {{-- <td>
                                 <button class="btn btn-xs">Download</button>
                             </td>
                             <td>
@@ -56,7 +60,7 @@
                                 <a href="{{ route('ubahdata') }}" class="btn btn-xs">
                                     edit SC
                                 </a>
-                            </td>
+                            </td> --}}
                         </tr>
                     @endforeach
                 </tbody>
