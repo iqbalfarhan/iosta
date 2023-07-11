@@ -8,7 +8,7 @@
         </label>
     </div>
     <div class="flex-1">
-        <a class="btn btn-ghost normal-case text-xl">{{ config('app.name') }}</a>
+        <a href="{{ route('home') }}" class="btn btn-ghost normal-case text-xl">{{ config('app.name') }}</a>
     </div>
     <div class="flex-none">
         {{-- @livewire('components.breadcrumb') --}}

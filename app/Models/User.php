@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Carbon\Exceptions\EndLessPeriodException;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -57,5 +58,14 @@ class User extends Authenticatable
         }
 
         return $initials;
+    }
+
+    public function getAccessableWitelAttribute()
+    {
+        if ($this->witel == "REGIONAL") {
+            return config('ios.listWitel');
+        } else {
+            return [$this->witel];
+        }
     }
 }

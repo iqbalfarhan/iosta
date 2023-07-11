@@ -23,7 +23,7 @@
             <button wire:click.prevent="$emit('toggleShow')" class="btn btn-xs btn-ghost">Tambah peruntukan</button>
         </div>
         <div class="overflow-x-auto bg-base-100 rounded-xl">
-            <table class="table">
+            <table class="table table-xs">
                 <thead>
                     <tr class="bg-base-300">
                         <th></th>
@@ -34,6 +34,8 @@
                         <th>status</th>
                         <th>Durasi</th>
                         <th>kelas layanan</th>
+                        <th>Download</th>
+                        <th>Edit</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -49,15 +51,16 @@
                             <td>{{ $item->durasi }} bulan</td>
                             <td>{{ $item->layanan }}</td>
                             <td>
+                                <button class="btn btn-xs">Download</button>
+                            </td>
+                            <td>
+                                <button class="btn btn-xs">BA BR</button>
+                                <button class="btn btn-xs">BA SC</button>
+                            </td>
+                            <td>
                                 <button class="btn btn-xs btn-circle btn-ghost">
-                                    @livewire('icons.edit', key(uniqId()))
+                                    @livewire('icons.list-bullet', key(uniqId()))
                                 </button>
-                                @if ($item->fileba)
-                                    <a href="{{ Storage::url($item->fileba) }}"
-                                        class="btn btn-xs btn-circle btn-ghost">
-                                        @livewire('icons.download', key(uniqId()))
-                                    </a>
-                                @endif
                                 <button class="btn btn-xs btn-circle btn-ghost">
                                     @livewire('icons.close', key(uniqId()))
                                 </button>
@@ -70,9 +73,35 @@
     </div>
     <div class="flex flex-col gap-3">
         <h3 class="font-semibold">Riwayat perubahan:</h3>
-
-        <div class="flex flex-col gap-2">
-            @livewire('components.log-item')
+        <div class="overflow-x-auto bg-base-100 rounded-xl">
+            <table class="table table-xs">
+                <thead>
+                    <tr class="bg-base-300">
+                        <th></th>
+                        <th>luas sebelum</th>
+                        <th>klasifikasi</th>
+                        <th>peruntukan</th>
+                        <th>fileba</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($data->logs as $log)
+                        <tr>
+                            <td>{{ $log->id }}</td>
+                            <td>{{ $log->luas }}</td>
+                            <td>{{ $log->klasifikasi }}</td>
+                            <td>{{ $log->peruntukan }}</td>
+                            <td>
+                                {{-- {{ $log->fileba }} --}}
+                                <button class="btn btn-xs">
+                                    download
+                                </button>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
 

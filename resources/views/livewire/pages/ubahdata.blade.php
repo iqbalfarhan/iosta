@@ -1,5 +1,5 @@
 <div class="w-full flex justify-center">
-    <form class="card bg-base-100" wire:submit.prevent="simpan">
+    <form class="card w-full max-w-xl bg-base-100" wire:submit.prevent="simpan">
         <div class="card-body">
             <h3 class="card-title">Input perubahan data</h3>
             <div class="flex flex-col gap-3 py-4">
@@ -18,17 +18,40 @@
                         @endforeach
                     </select>
                 @endif
-                <div class="divider text-xs">Hasil pengukuran baru</div>
-                <select class="select bg-base-200 @error('jenis') select-error @enderror" wire:model="jenis">
-                    <option value="">Pilih jenis pengukuran</option>
-                    <option value="tambah">Tambah</option>
-                    <option value="kurang">Kurang</option>
-                </select>
-                <input type="text" wire:model="luas" placeholder="Luas hasil pengukuran"
-                    class="input bg-base-200 @error('luas') input-error @enderror">
-                <div class="divider text-xs">Upload BA Rekon</div>
-                <input type="file" wire:model="fileba" placeholder="Upload BA" accept="application/pdf"
-                    class="file-input file-input-ghost bg-base-200 @error('fileba') input-error @enderror">
+
+                @if ($peruntukan)
+                    <div class="flex flex-col gap-2 form-control">
+                        <div class="label">
+                            <span class="label-text-alt">
+                                Pilih klasifikasi :
+                            </span>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            @foreach (config('ios.listKlasifikasi') as $klf)
+                                <label class="flex gap-1">
+                                    <input type="radio" wire:model="jenis" value="{{ $klf }}"
+                                        class="radio radio-sm" />
+                                    <span class="text-sm">{{ $klf }}</span>
+                                </label>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="" class="label">
+                            <div class="label-text-alt">Hasil pengukuran baru :</div>
+                        </label>
+                        <input type="text" wire:model="luas" placeholder="Luas hasil pengukuran"
+                            class="input bg-base-200 @error('luas') input-error @enderror">
+                    </div>
+
+                    <div class="form-control">
+                        <label for="" class="label"><span class="label-text-alt">Upload BA Rekon
+                                :</span></label>
+                        <input type="file" wire:model="fileba" placeholder="Upload BA" accept="application/pdf"
+                            class="file-input file-input-ghost bg-base-200 @error('fileba') input-error @enderror">
+                    </div>
+                @endif
             </div>
             <div class="card-actions">
                 <button class="btn btn-primary" type="submit">Simpan</button>

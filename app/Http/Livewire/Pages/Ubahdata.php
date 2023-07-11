@@ -11,6 +11,10 @@ class Ubahdata extends Component
 {
     use WithFileUploads;
 
+    public $queryString = [
+        'peruntukan'
+    ];
+
     protected $fillable = [
         'reload' => '$refresh'
     ];
@@ -25,6 +29,24 @@ class Ubahdata extends Component
     {
         $this->lokasi = Lokasi::find($lokasi_id);
         $this->peruntukan = "";
+    }
+
+    public function updatedPeruntukan($peruntukan)
+    {
+        $data = Peruntukan::find($peruntukan);
+        $this->jenis = $data->klasifikasi;
+    }
+
+    public function mount()
+    {
+        $data = Peruntukan::find($this->peruntukan);
+
+        if ($this->peruntukan) {
+            $this->lokasi_id = $data->lokasi_id;
+            $this->lokasi = $data->lokasi;
+
+            $this->jenis = $data->klasifikasi;
+        }
     }
 
     public function simpan()
@@ -46,13 +68,13 @@ class Ubahdata extends Component
             'luas' => $this->luas
         ]);
 
-        dd($filename, $data);
+        return redirect()->route('home');
     }
 
     public function render()
     {
         return view('livewire.pages.ubahdata', [
-            'gedungs' => Lokasi::where('witel', auth()->user()->witel)->get()->pluck('nama', 'id'),
+            'gedungs' => Lokasi::whereIn('witel', auth()->user()->accessable_witel)->get()->pluck('nama', 'id'),
             'peruntukans' => $this->lokasi ? $this->lokasi->peruntukans->pluck('peruntukan', 'id') : null,
         ]);
     }

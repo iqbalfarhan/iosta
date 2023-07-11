@@ -1,6 +1,6 @@
 <ul class="menu p-4 w-72 h-full bg-base-100">
     <li><a href="{{ route('home') }}">@livewire('icons.apps')Dashboard</a></li>
-    <li><a href="{{ route('object-sewa') }}">@livewire('icons.home')Object sewa</a></li>
+    {{-- <li><a href="{{ route('object-sewa') }}">@livewire('icons.home')Object sewa</a></li> --}}
     <li><a href="{{ route('ubahdata') }}">@livewire('icons.edit')Update data</a></li>
     <li><a href="{{ route('upload-ba') }}">@livewire('icons.upload')Upload BA Rekon</a></li>
     <li></li>

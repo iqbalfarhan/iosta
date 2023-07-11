@@ -11,10 +11,10 @@
 
 <body data-theme="light">
     @auth
-        <div class="drawer lg:drawer-open bg-base-200">
+        <div class="drawer bg-base-200">
             <input id="drawer" type="checkbox" class="drawer-toggle" />
             {{-- bg-[url(http://127.0.0.1:8000/img/indonesia.svg)] bg-no-repeat bg-center bg-contain --}}
-            <div class="drawer-content flex flex-col flex-1">
+            <div class="drawer-content flex flex-col flex-1 min-h-screen">
                 @livewire('components.navbar')
                 <div
                     class="flex flex-1 flex-col p-6 gap-6 bg-[url(http://127.0.0.1:8000/img/indonesia.svg)] bg-no-repeat bg-center bg-cover">

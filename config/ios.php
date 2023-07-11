@@ -16,10 +16,10 @@ return [
     'gudang tertutup'
   ],
   'listKlasifikasi' => [
+    "SO NTE",
     "SO NON NTE",
     "SO IOAN",
-    "FIBER ACADEMY",
     "SO NON IOAN",
-    "SO NTE",
+    "FIBER ACADEMY",
   ]
 ];

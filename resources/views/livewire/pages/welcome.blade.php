@@ -25,4 +25,6 @@
             <div class="stat-desc">↗︎ 400 (22%)</div>
         </div>
     </div>
+
+    @livewire('pages.object-sewa')
 </div>

@@ -12,7 +12,7 @@
     </div>
 
     <div class="overflow-x-auto rounded-xl">
-        <table class="table bg-base-100">
+        <table class="table table-sm bg-base-100">
             <thead>
                 <tr class="bg-base-300">
                     <th></th>
