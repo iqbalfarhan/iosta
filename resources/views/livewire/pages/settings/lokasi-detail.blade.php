@@ -75,7 +75,9 @@
             </table>
         </div>
     </div>
-    @livewire('peruntukan.show', ['peruntukan' => $data->id])
+    @if ($data->logs->count() != 0)
+        @livewire('peruntukan.show', ['peruntukan' => $data->id])
+    @endif
 
     @livewire('components.lokasi-peruntukan', ['lokasi' => $data->id])
     @livewire('pages.settings.lokasi-edit', ['lokasi' => $data->id])

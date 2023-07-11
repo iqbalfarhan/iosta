@@ -2,7 +2,7 @@
     <form class="card w-full max-w-xl bg-base-100" wire:submit.prevent="simpan">
         <div class="card-body">
             <h3 class="card-title">Input perubahan data</h3>
-            <div class="flex flex-col gap-3 py-4">
+            <div class="flex flex-col gap-6 py-4">
                 <select class="select bg-base-200 @error('lokasi_id') select-error @enderror" wire:model="lokasi_id">
                     <option value="">Pilih gedung</option>
                     @foreach ($gedungs as $key => $gedung)
@@ -20,6 +20,9 @@
                 @endif
 
                 @if ($peruntukan)
+                    @php
+                        $dataPeruntukan = \App\Models\Peruntukan::find($this->peruntukan);
+                    @endphp
                     <div class="flex flex-col gap-2 form-control">
                         <div class="label">
                             <span class="label-text-alt">
@@ -40,6 +43,7 @@
                     <div class="form-control">
                         <label for="" class="label">
                             <div class="label-text-alt">Hasil pengukuran baru :</div>
+                            <div class="label-text-alt">Data lama : {{ $dataPeruntukan->luas ?? 0 }}</div>
                         </label>
                         <input type="text" wire:model="luas" placeholder="Luas hasil pengukuran"
                             class="input bg-base-200 @error('luas') input-error @enderror">
