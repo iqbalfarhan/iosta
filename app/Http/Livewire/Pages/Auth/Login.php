@@ -8,8 +8,8 @@ use Livewire\Component;
 class Login extends Component
 {
     public $data = [
-        'username' => '196509',
-        'password' => 'adminoke'
+        'username' => '',
+        'password' => ''
     ];
 
     public function submit()
