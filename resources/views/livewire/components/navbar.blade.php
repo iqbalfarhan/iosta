@@ -12,11 +12,11 @@
     </div>
     <div class="navbar-end gap-2">
         @livewire('components.theme-switcher')
-        <details class="dropdown dropdown-end hidden lg:block">
-            <summary class="btn btn-sm btn-neutral btn-circle">
+        <div class="dropdown dropdown-end hidden lg:block">
+            <label tabindex="0" class="btn btn-sm btn-neutral btn-circle">
                 {{ $initial }}
-            </summary>
-            <ul class="shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+            </label>
+            <ul tabindex="0" class="shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
                 <li>
                     <a href="{{ route('profile') }}">
                         <x-icons name="user" />
@@ -37,6 +37,6 @@
                     </a>
                 </li>
             </ul>
-        </details>
+        </div>
     </div>
 </div>
