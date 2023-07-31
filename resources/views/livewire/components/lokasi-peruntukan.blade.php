@@ -60,7 +60,7 @@
             </div>
             <div class="modal-action justify-between">
                 <label for="addPeruntukan" class="btn btn-circle">
-                    @livewire('icons.close')
+                    <x-icons name="close" />
                 </label>
                 <button type="submit" class="btn btn-primary">simpan</button>
             </div>

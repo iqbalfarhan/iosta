@@ -1,5 +1,14 @@
 <div class="flex flex-col gap-6">
-    <input type="text" placeholder="Cari user dengan nama, email, username atau witel" class="input w-full" />
+    <div class="flex justify-between gap-6">
+        <div class="flex flex-1">
+            <input type="text" placeholder="Cari user dengan nama, email, username atau witel" class="input w-full" />
+        </div>
+        <div>
+            <button class="btn btn-square btn-primary">
+                <x-icons name="plus" size="5" />
+            </button>
+        </div>
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         @foreach ($datas as $data)
             <div class="card card-compact w-full bg-base-100">
@@ -11,8 +20,8 @@
                             </div>
                         </div>
                         <div class="card-actions justify-end">
-                            <button class="btn btn-square btn-sm">
-                                @livewire('icons.edit')
+                            <button class="btn btn-circle btn-sm">
+                                <x-icons name="edit" />
                             </button>
                         </div>
                     </div>
@@ -24,5 +33,4 @@
             </div>
         @endforeach
     </div>
-
 </div>

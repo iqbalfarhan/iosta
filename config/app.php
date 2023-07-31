@@ -161,6 +161,7 @@ return [
              */
 
         Intervention\Image\ImageServiceProvider::class,
+        App\Providers\QuartalServiceProvider::class,
 
             /*
              * Application Service Providers...
@@ -185,7 +186,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
-        'Image' => Intervention\Image\Facades\Image::class
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Quartal' => App\Helpers\Quartal::class,
     ])->toArray(),
 
 ];

@@ -9,7 +9,8 @@
    mapsvg:geoViewBox="95.220250 7.356505 141.009728 -10.946766"
    width="792.54596"
    height="316.66394"
-   fill="#eaeaea"
+   fill="#6b7280"
+   fill-opacity="0.1"
    >
  
   <path

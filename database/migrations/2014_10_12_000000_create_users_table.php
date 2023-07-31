@@ -16,6 +16,8 @@ return new class extends Migration {
             $table->string('username')->unique();
             $table->string('password');
             $table->string('witel')->nullable();
+            $table->string('photo')->nullable();
+            $table->boolean('darkmode')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

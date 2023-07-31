@@ -1,22 +1,23 @@
-<ul class="menu p-4 w-72 h-full bg-base-100">
-    <li><a href="{{ route('home') }}">@livewire('icons.apps')Dashboard</a></li>
-    {{-- <li><a href="{{ route('object-sewa') }}">@livewire('icons.home')Object sewa</a></li> --}}
-    <li><a href="{{ route('ubahdata') }}">@livewire('icons.edit')Update data</a></li>
-    <li><a href="{{ route('upload-ba') }}">@livewire('icons.upload')Upload BA Rekon</a></li>
-    <li></li>
-    <li>
-        <details open>
-            <summary>@livewire('icons.setting')Settings</summary>
-            <ul>
-                <li><a href="{{ route('settings.periode') }}">@livewire('icons.clock')Periode aktif</a></li>
-                <li><a href="{{ route('settings.lokasi') }}">@livewire('icons.building')Pengaturan lokasi</a></li>
-                <li><a href="{{ route('settings.user') }}">@livewire('icons.users')User management</a></li>
-            </ul>
-        </details>
-    </li>
-    <li></li>
-    <li><a href="{{ route('profile') }}">@livewire('icons.user')Update profile</a></li>
-    <li><a wire:click.prevent="$emit('logout')">@livewire('icons.logout')Keluar aplikasi</a></li>
+<ul class="menu p-2 w-80 h-full bg-base-100">
+    <div class="menu pt-0">
+        <div>
+            <label for="drawer" class="btn btn-circle">
+                <x-icons name="close" size="5" />
+            </label>
+        </div>
+    </div>
 
-    @livewire('components.logout')
+    @foreach ($datas as $header => $menus)
+        <li class="menu-title">{{ $header }}</li>
+        @foreach ($menus as $menu)
+            <li>
+                <a href="{{ route($menu['route']) }}" class="{{ Route::is($menu['route']) ? 'active' : '' }}">
+                    <x-icons name="{{ $menu['icon'] }}" />
+                    {{ $menu['label'] }}
+                </a>
+            </li>
+        @endforeach
+        <li class="my-4"></li>
+    @endforeach
+
 </ul>

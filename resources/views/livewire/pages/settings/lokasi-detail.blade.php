@@ -1,5 +1,5 @@
 <div class="flex flex-col gap-6">
-    <div class="card card-compact bg-base-100">
+    <div class="card bg-base-100">
         <div class="card-body">
             <div class="flex gap-3 items-center">
                 <div class="avatar">
@@ -8,11 +8,11 @@
                     </div>
                 </div>
                 <div class="flex flex-1 flex-col">
-                    <div class="font-semibold">{{ $data->nama }} - {{ $data->witel }}</div>
-                    <div class="text-xs">{{ $data->alamat }}</div>
+                    <div class="font-semibold text-lg">{{ $data->nama }} - {{ $data->witel }}</div>
+                    <div>{{ $data->alamat }}</div>
                 </div>
-                <button class="btn btn-ghost btn-sm" wire:click.prevent="$emit('toggleEditLokasiModal')">
-                    @livewire('icons.edit') edit
+                <button class="btn btn-primary" wire:click.prevent="$emit('toggleEditLokasiModal')">
+                    <x-icons name="edit" /> edit
                 </button>
             </div>
         </div>
@@ -62,15 +62,15 @@
                             <td>
                                 <a href="{{ route('peruntukan.edit', $item->id) }}"
                                     class="btn btn-xs btn-circle btn-ghost">
-                                    @livewire('icons.edit', key(uniqId()))
+                                    <x-icons name="edit" />
                                 </a>
                                 <a href="{{ route('peruntukan.show', $item->id) }}"
                                     class="btn btn-xs btn-circle btn-ghost">
-                                    @livewire('icons.list-bullet', key(uniqId()))
+                                    <x-icons name="list-bullet" />
                                 </a>
                                 <button class="btn btn-xs btn-circle btn-ghost"
                                     wire:click.prevent="hapusPeruntukan({{ $item->id }})">
-                                    @livewire('icons.close', key(uniqId()))
+                                    <x-icons name="close" />
                                 </button>
                             </td>
                         </tr>

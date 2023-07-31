@@ -13,6 +13,7 @@ use App\Http\Livewire\Pages\Ubahdata;
 use App\Http\Livewire\Pages\UploadBa;
 use App\Http\Livewire\Peruntukan\Edit;
 use App\Http\Livewire\Peruntukan\Show;
+use App\Http\Livewire\Settings\Permission;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,8 +44,13 @@ Route::middleware('auth')->group(function () {
   Route::get('/peruntukan/{peruntukan}', Show::class)->name('peruntukan.show');
   Route::get('/peruntukan/{peruntukan}/edit', Edit::class)->name('peruntukan.edit');
   Route::get('/upload-ba', UploadBa::class)->name('upload-ba');
-  Route::get('/setting/user', User::class)->name('settings.user');
-  Route::get('/setting/periode', Periode::class)->name('settings.periode');
-  Route::get('/setting/lokasi', Lokasi::class)->name('settings.lokasi');
-  Route::get('/setting/lokasi/{lokasi}', LokasiDetail::class)->name('settings.lokasi.detail');
+
+  Route::prefix('setting')->group(function () {
+    Route::get('/user', User::class)->name('settings.user');
+    Route::get('/periode', Periode::class)->name('settings.periode');
+    Route::get('/lokasi', Lokasi::class)->name('settings.lokasi');
+    Route::get('/permission', Permission::class)->name('settings.permission');
+    Route::get('/lokasi/{lokasi}', LokasiDetail::class)->name('settings.lokasi.detail');
+  });
+
 });
