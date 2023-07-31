@@ -11,7 +11,6 @@
         </div>
     </div>
 
-
     <div class="flex flex-col gap-3">
         <div class="flex justify-between">
             <div class="flex gap-6 items-center">
