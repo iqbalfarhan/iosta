@@ -11,12 +11,13 @@ class LogPeruntukan extends Model
 
     protected $fillable = [
         'peruntukan_id',
-        'luas_awal',
-        'luas_baru',
-        'klasifikasi_awal',
-        'klasifikasi_baru',
-        'peruntukan_awal',
-        'peruntukan_baru',
+        'kode_q',
+        'luas',
+        'br',
+        'sc',
+        'status',
+        'durasi',
+        'layanan',
         'fileba',
     ];
 

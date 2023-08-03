@@ -11,17 +11,9 @@ class Peruntukan extends Model
 
     protected $fillable = [
         'lokasi_id',
-        'kode_q',
         'fungsi',
         'klasifikasi',
         'peruntukan',
-        'luas',
-        'br',
-        'sc',
-        'status',
-        'durasi',
-        'layanan',
-        'fileba',
     ];
 
     public function lokasi()
