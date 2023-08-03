@@ -11,6 +11,7 @@ class Peruntukan extends Model
 
     protected $fillable = [
         'lokasi_id',
+        'kode_q',
         'fungsi',
         'klasifikasi',
         'peruntukan',
@@ -61,5 +62,21 @@ class Peruntukan extends Model
             "color" => $color,
             "diff" => $diff
         ];
+    }
+
+    public function getLuasSebelumAttribute()
+    {
+        $periode = $this->kode_q;
+        list($q, $year) = explode('-', $periode);
+
+        $qnum = intval(str_replace('q', '', $q));
+
+        if ($qnum == 1) {
+            $periode = 'q4-' . ((int) $year - 1);
+        } else {
+            $periode = 'q' . ($qnum - 1) . '-' . $year;
+        }
+
+        return $periode;
     }
 }

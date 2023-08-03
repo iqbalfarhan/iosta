@@ -5,12 +5,6 @@
             @livewire('widget.stat-q')
         </div>
 
-        <div class="stat bg-base-100 rounded-xl">
-            <div class="stat-title">Perubahan Q3</div>
-            <div class="stat-value">31</div>
-            <div class="stat-desc">↘︎ 90 (14%)</div>
-        </div>
-
         <a href="{{ route('settings.lokasi') }}" class="stat bg-base-100 rounded-xl">
             <div class="stat-title">Total gedung</div>
             <div class="">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Components;
 
+use App\Helpers\Quartal;
 use App\Models\Lokasi;
 use App\Models\Peruntukan;
 use Livewire\Component;
@@ -78,6 +79,7 @@ class LokasiPeruntukan extends Component
             'layanan' => 'required',
         ]);
         $valid['lokasi_id'] = $this->lokasi->id;
+        $valid['kode_q'] = Quartal::now()['code'];
         Peruntukan::create($valid);
         $this->toggleShow();
         $this->emit('reload');

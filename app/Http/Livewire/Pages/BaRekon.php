@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Pages;
 
 use App\Models\LogPeruntukan;
 use Illuminate\Support\Facades\Storage;
@@ -20,7 +20,7 @@ class BaRekon extends Component
     }
     public function render()
     {
-        return view('livewire.ba-rekon', [
+        return view('livewire.pages.ba-rekon', [
             'datas' => LogPeruntukan::whereNotNull('fileba')->get()
         ]);
     }

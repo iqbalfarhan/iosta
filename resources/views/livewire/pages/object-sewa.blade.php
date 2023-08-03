@@ -2,10 +2,16 @@
     <input type="text" placeholder="Cari object sewa dengan gedung, fungsi, klasifikasi atau nama peruntukan"
         class="input w-full" wire:model="cari" />
     <div class="flex flex-col gap-3">
-        <span class="text-xs text-base-content">Data yang ditampilkan disesuaikan dengan area anda :
-            <b>{{ auth()->user()->witel }}</b></span>
+        <div class="flex justify-between items-end">
+            <span class="text-xs text-base-content">Data yang ditampilkan disesuaikan dengan area anda :
+                <b>{{ auth()->user()->witel }}</b></span>
+
+            <button class="btn btn-xs btn-success">
+                download excel
+            </button>
+        </div>
         <div class="overflow-x-auto bg-base-100 rounded-xl">
-            <table class="table table-xs">
+            <table class="table table-sm">
                 <thead>
                     <tr class="bg-base-300">
                         <th></th>
@@ -13,17 +19,14 @@
                         <th>Gedung</th>
                         <th>Fungsi</th>
                         <th>Luas</th>
-                        <th class="bg-green-200">BR</th>
-                        <th class="bg-red-200">SC</th>
+                        <th>BR</th>
+                        <th>SC</th>
                         <th>klasifikasi</th>
                         <th>Peruntukan</th>
                         <th>Status</th>
-                        <th>Awal</th>
-                        <th>Akhir</th>
-                        <th>Durasi</th>
+                        <th>Q</th>
                         <th>Layanan</th>
-                        {{-- <th>Download Excel</th>
-                        <th>Edit</th> --}}
+                        <th>Edit</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -56,21 +59,13 @@
                             <td>{{ $item->klasifikasi }}</td>
                             <td>{{ $item->peruntukan }}</td>
                             <td>{{ $item->status }}</td>
-                            <td>01 Juli 2023</td>
-                            <td>30 September 2023</td>
-                            <td>{{ $item->durasi }}</td>
+                            <td>{{ $item->kode_q }}</td>
                             <td>{{ $item->layanan }}</td>
-                            {{-- <td>
-                                <button class="btn btn-xs">Download</button>
-                            </td>
                             <td>
                                 <a href="{{ route('ubahdata', ['peruntukan' => $item->id]) }}" class="btn btn-xs">
-                                    edit br
+                                    edit
                                 </a>
-                                <a href="{{ route('ubahdata') }}" class="btn btn-xs">
-                                    edit SC
-                                </a>
-                            </td> --}}
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

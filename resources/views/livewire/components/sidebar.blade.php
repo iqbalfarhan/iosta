@@ -1,7 +1,7 @@
 <ul class="menu p-2 w-80 h-full bg-base-100">
-    <div class="menu pt-0">
-        <div>
-            <label for="drawer" class="btn btn-circle">
+    <div class="menu">
+        <div class="">
+            <label for="drawer" class="btn btn-circle self-end">
                 <x-icons name="close" size="5" />
             </label>
         </div>

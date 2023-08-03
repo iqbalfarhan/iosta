@@ -25,8 +25,8 @@
                 </li>
                 <li>
                     <a href="{{ route('profile') }}">
-                        <x-icons name="user" />
-                        <span>Settings</span>
+                        <x-icons name="cog" />
+                        <span>Theme settings</span>
                     </a>
                 </li>
                 <li></li>

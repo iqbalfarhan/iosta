@@ -26,6 +26,11 @@ class Sidebar extends Component
                         'icon' => 'upload',
                         'route' => 'upload-ba'
                     ],
+                    // [
+                    //     'label' => 'File BA Rekon',
+                    //     'icon' => 'folder',
+                    //     'route' => 'ba-rekon'
+                    // ],
                 ],
                 'Pengaturan' => [
                     [

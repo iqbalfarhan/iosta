@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Livewire\BaRekon;
+use App\Http\Livewire\Pages\BaRekon;
 use App\Http\Livewire\Pages\Welcome;
 use App\Http\Livewire\Pages\Profile;
 use App\Http\Livewire\Pages\Settings\Lokasi;

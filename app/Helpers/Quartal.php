@@ -22,11 +22,13 @@ class Quartal
       $end_month
     ])));
 
-    return [
+    return collect([
       'year' => $year,
       'q' => $quarter,
       'end' => $end_date,
       'start' => $start_date,
-    ];
+      'limit' => date('Y-m-25', strtotime($end_date)),
+      'code' => implode('-', ['q' . $quarter, $year])
+    ]);
   }
 }

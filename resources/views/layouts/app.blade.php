@@ -15,8 +15,8 @@
             <input id="drawer" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content flex flex-col flex-1 min-h-screen">
                 @livewire('components.navbar')
-                <div class="flex flex-1 flex-col p-6 gap-6 bg-no-repeat bg-center bg-cover"
-                    style="background-image: url('{{ Storage::url('indonesia.svg') }}')">
+                <div class="flex flex-1 flex-col p-6 gap-6 bg-no-repeat bg-center bg-cover bg-fixed"
+                    style="background-image: url('{{ Storage::url('indonesia.svg') }}'); background-size:90%;">
                     <div class="container mx-auto max-w-7xl">
                         {{ $slot }}
                     </div>
