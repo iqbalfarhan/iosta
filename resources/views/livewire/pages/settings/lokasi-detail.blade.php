@@ -11,7 +11,7 @@
                     <div class="font-semibold text-lg">{{ $data->nama }} - {{ $data->witel }}</div>
                     <div>{{ $data->alamat }}</div>
                 </div>
-                <button class="btn btn-primary" wire:click.prevent="$emit('toggleEditLokasiModal')">
+                <button class="btn btn-primary btn-sm" wire:click.prevent="$emit('toggleEditLokasiModal')">
                     <x-icons name="edit" /> edit
                 </button>
             </div>
@@ -20,7 +20,7 @@
     <div class="flex flex-col gap-3">
         <div class="flex justify-between">
             <h3 class="font-semibold">Peruntukan gedung:</h3>
-            <button wire:click.prevent="$emit('toggleShow')" class="btn btn-xs btn-ghost">Tambah peruntukan</button>
+            {{-- <button wire:click.prevent="$emit('toggleShow')" class="btn btn-xs btn-ghost">Tambah peruntukan</button> --}}
         </div>
         <div class="overflow-x-auto bg-base-100 rounded-xl">
             <table class="table table-sm">
