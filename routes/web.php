@@ -12,6 +12,7 @@ use App\Http\Livewire\Pages\Settings\Periode;
 use App\Http\Livewire\Pages\Ubahdata;
 use App\Http\Livewire\Pages\UploadBa;
 use App\Http\Livewire\Peruntukan\Edit;
+use App\Http\Livewire\Peruntukan\Logs;
 use App\Http\Livewire\Peruntukan\Show;
 use App\Http\Livewire\Settings\Permission;
 use Illuminate\Support\Facades\Route;
@@ -43,6 +44,8 @@ Route::middleware('auth')->group(function () {
   Route::get('/ubahdata', Ubahdata::class)->name('ubahdata');
   Route::get('/peruntukan/{peruntukan}', Show::class)->name('peruntukan.show');
   Route::get('/peruntukan/{peruntukan}/edit', Edit::class)->name('peruntukan.edit');
+  Route::get('/peruntukan/{peruntukan}/logs', Logs::class)->name('peruntukan.logs');
+  Route::get('/logs/{logperuntukan}/edit', \App\Http\Livewire\Logs\Edit::class)->name('logs.edit');
   Route::get('/upload-ba', UploadBa::class)->name('upload-ba');
 
   Route::prefix('setting')->group(function () {

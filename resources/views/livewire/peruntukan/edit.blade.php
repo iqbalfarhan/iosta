@@ -41,52 +41,6 @@
                 </label>
                 <input type="text" wire:model="nama" placeholder="peruntukan" class="input bg-base-200" />
             </div>
-            <div class="form-control">
-                <label for="" class="label">
-                    <span class="label-text">Luas perhitungan</span>
-                </label>
-                <input type="number" step="0.001" wire:model="luas" placeholder="luas" class="input bg-base-200" />
-            </div>
-            <div class="form-control">
-                <label for="" class="label">
-                    <span class="label-text">Luas Base Rent (BR)</span>
-                </label>
-                <input type="number" step="0.001" wire:model="br" placeholder="br" class="input bg-base-200" />
-            </div>
-            <div class="form-control">
-                <label for="" class="label">
-                    <span class="label-text">Luas Service charge (SC)</span>
-                </label>
-                <input type="number" step="0.001" wire:model="sc" placeholder="sc" class="input bg-base-200" />
-            </div>
-            <div class="form-control">
-                <label for="" class="label">
-                    <span class="label-text">status</span>
-                </label>
-                <select wire:model="status" class="select bg-base-200">
-                    <option value="EXISTING">EXISTING</option>
-                    <option value="NEW">NEW</option>
-                </select>
-            </div>
-            <div class="form-control">
-                <label for="" class="label">
-                    <span class="label-text">durasi</span>
-                </label>
-                <input type="number" wire:model="durasi" placeholder="durasi" class="input bg-base-200" />
-            </div>
-            <div class="form-control">
-                <label for="" class="label">
-                    <span class="label-text">layanan</span>
-                </label>
-                <input type="number" wire:model="layanan" placeholder="layanan" class="input bg-base-200" />
-            </div>
-            <div class="form-control">
-                <label for="" class="label">
-                    <span class="label-text">File BA Rekonsiliasi</span>
-                </label>
-                <input type="file" wire:model="fileba" placeholder="fileba" class="file-input bg-base-200"
-                    accept="application/pdf" />
-            </div>
         </div>
         <div class="card-actions">
             <button type="submit" class="btn btn-primary">Simpan</button>

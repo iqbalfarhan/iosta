@@ -1,5 +1,5 @@
 <div>
-    <label class="stats bg-base-100 rounded-xl w-full" for="modalquartal">
+    <label class="stats flex flex-col lg:flex-row bg-base-100 rounded-xl w-full" for="modalquartal">
         <div class="stat">
             <div class="stat-title">Sesi sekarang</div>
             <div class="stat-value">Q{{ $periode['q'] }}
@@ -15,16 +15,18 @@
     </label>
 
     <input type="checkbox" id="modalquartal" class="modal-toggle" />
+
     <div class="modal">
         <div class="modal-box w-full max-w-7xl">
             <h3 class="font-bold text-lg">Persentase dalam Q{{ $periode['q'] }} {{ $periode['year'] }}</h3>
             <div class="py-4 overflow-x-auto">
-                <table class="table rounded-xl overflow-hidden bg-base-200">
+                <table class="table rounded-xl overflow-hidden bg-base-200 table-sm">
                     <thead class="bg-base-300">
                         <th>Witel</th>
                         <th>Gedung</th>
                         <th>Fungsi</th>
                         <th>Klasifikasi</th>
+                        <th>peruntukan</th>
                         <th>Luas Q2</th>
                         <th>Luas Q3</th>
                     </thead>
@@ -35,8 +37,9 @@
                                 <td>{{ $data->lokasi->nama ?? '' }}</td>
                                 <td>{{ $data->fungsi }}</td>
                                 <td>{{ $data->klasifikasi }}</td>
-                                <td>{{ $data->luas_sebelum }}</td>
-                                <td>{{ $data->luas }}</td>
+                                <td>{{ $data->peruntukan }}</td>
+                                <td>{{ $data->getLuasByQ($prevcode) ?? '' }} m<sup>2</sup></td>
+                                <td>{{ $data->getLuasByQ($periode['code']) ?? '' }} m<sup>2</sup></td>
                             </tr>
                         @endforeach
                     </tbody>

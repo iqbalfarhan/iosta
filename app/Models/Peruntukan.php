@@ -31,6 +31,11 @@ class Peruntukan extends Model
         return $this->hasOne(LogPeruntukan::class);
     }
 
+    public function getLuasByQ($kode_q)
+    {
+        return $this->logs->where('kode_q', $kode_q)->first()->luas ?? 0;
+    }
+
     public function luasstatus()
     {
         $symbol = "";
@@ -58,17 +63,6 @@ class Peruntukan extends Model
 
     public function getLuasSebelumAttribute()
     {
-        $periode = $this->kode_q;
-        list($q, $year) = explode('-', $periode);
-
-        $qnum = intval(str_replace('q', '', $q));
-
-        if ($qnum == 1) {
-            $periode = 'q4-' . ((int) $year - 1);
-        } else {
-            $periode = 'q' . ($qnum - 1) . '-' . $year;
-        }
-
-        return $periode;
+        return 0;
     }
 }

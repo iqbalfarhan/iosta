@@ -23,7 +23,7 @@
             <button wire:click.prevent="$emit('toggleShow')" class="btn btn-xs btn-ghost">Tambah peruntukan</button>
         </div>
         <div class="overflow-x-auto bg-base-100 rounded-xl">
-            <table class="table table-xs">
+            <table class="table table-sm">
                 <thead>
                     <tr class="bg-base-300">
                         <th></th>
@@ -37,7 +37,7 @@
                         <th>Durasi</th>
                         <th>kelas layanan</th>
                         <th>BA Rekon</th>
-                        <th></th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,14 +45,14 @@
                         <tr>
                             <th>{{ $key + 1 }}</th>
                             <td>{{ $item->fungsi }}</td>
-                            <td>{{ $item->luas }}</td>
-                            <td>{{ $item->br }}</td>
-                            <td>{{ $item->sc }}</td>
+                            <td>{{ $item->lastlog->luas }}</td>
+                            <td>{{ $item->lastlog->br }}</td>
+                            <td>{{ $item->lastlog->sc }}</td>
                             <td>{{ $item->klasifikasi }}</td>
                             <td>{{ $item->peruntukan }}</td>
-                            <td>{{ $item->status }}</td>
-                            <td>{{ $item->durasi }} bulan</td>
-                            <td>{{ $item->layanan }}</td>
+                            <td>{{ $item->lastlog->status }}</td>
+                            <td>{{ $item->lastlog->durasi }} bulan</td>
+                            <td>{{ $item->lastlog->layanan }}</td>
                             <td>
                                 @if ($item->fileba)
                                     <button class="btn btn-xs"
@@ -64,7 +64,7 @@
                                     class="btn btn-xs btn-circle btn-ghost">
                                     <x-icons name="edit" />
                                 </a>
-                                <a href="{{ route('peruntukan.show', $item->id) }}"
+                                <a href="{{ route('peruntukan.logs', $item->id) }}"
                                     class="btn btn-xs btn-circle btn-ghost">
                                     <x-icons name="list-bullet" />
                                 </a>

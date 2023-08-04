@@ -31,4 +31,19 @@ class Quartal
       'code' => implode('-', ['q' . $quarter, $year])
     ]);
   }
+
+  public static function prevCode($periode)
+  {
+    list($q, $year) = explode('-', $periode);
+
+    $qnum = intval(str_replace('q', '', $q));
+
+    if ($qnum == 1) {
+      $periode = 'q4-' . ((int) $year - 1);
+    } else {
+      $periode = 'q' . ($qnum - 1) . '-' . $year;
+    }
+
+    return $periode;
+  }
 }

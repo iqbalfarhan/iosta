@@ -1,6 +1,6 @@
 <div class="grid grid-cols-3 gap-6">
     <div>
-        <div class="card bg-base-100">
+        <form class="card bg-base-100" wire:submit.prevent="uploadba">
             <div class="card-body">
 
                 <div class="card-title">
@@ -12,7 +12,8 @@
                             <span class="label-text">Pilih STO</span>
                         </label>
 
-                        <select class="select bg-base-200">
+                        <select class="select bg-base-200 @error('lokasi_id') select-error @enderror"
+                            wire:model="lokasi_id">
                             <option value="">---</option>
                             @foreach ($lokasis as $lokasiid => $lokasiname)
                                 <option value="{{ $lokasiid }}">{{ $lokasiname }}</option>
@@ -25,17 +26,19 @@
                             <span class="label-text">Pilih File BA Rekon</span>
                         </label>
 
-                        <input type="file" class="file-input bg-base-200" placeholder="pilih">
+                        <input type="file"
+                            class="file-input bg-base-200 @error('lokasi_id') file-input-error @enderror"
+                            wire:model="fileba" placeholder="pilih" accept="application/pdf">
                     </div>
                 </div>
                 <div class="card-actions">
-                    <button class="btn btn-primary">
+                    <button class="btn btn-primary" type="submit">
                         <x-icons name="upload" />
                         Upload BA Rekon
                     </button>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 
     <div class="col-span-2">
@@ -44,7 +47,7 @@
                 <thead class="bg-base-300">
                     <tr>
                         <th rowspan="2">STO</th>
-                        <th colspan="4">2023</th>
+                        <th colspan="4">{{ $year }}</th>
                     </tr>
                     <tr>
                         <th>Q1</th>
@@ -55,27 +58,43 @@
                 </thead>
                 <tbody>
                     @foreach ($lokasis as $lokasiid => $lokasiname)
+                        @php
+                            $codeq1 = 'q1-' . $year;
+                            $codeq2 = 'q2-' . $year;
+                            $codeq3 = 'q3-' . $year;
+                            $codeq4 = 'q4-' . $year;
+                        @endphp
                         <tr>
                             <td class="text-left">{{ $lokasiname }}</td>
                             <td>
-                                <button class="text-success">
-                                    <x-icons name="download" />
-                                </button>
+                                @if ($this->existData($codeq1, $lokasiid))
+                                    <button wire:click.prevent="download('{{ $codeq1 }}', '{{ $lokasiid }}')">
+                                        <x-icons name="download" />
+                                    </button>
+                                @endif
                             </td>
                             <td>
-                                <button>
-                                    <x-icons name="download" />
-                                </button>
+                                @if ($this->existData($codeq2, $lokasiid))
+                                    <button wire:click.prevent="download('{{ $codeq2 }}', '{{ $lokasiid }}')">
+                                        <x-icons name="download" />
+                                    </button>
+                                @endif
                             </td>
                             <td>
-                                <button>
-                                    <x-icons name="download" />
-                                </button>
+                                @if ($this->existData($codeq3, $lokasiid))
+                                    <button
+                                        wire:click.prevent="download('{{ $codeq3 }}', '{{ $lokasiid }}')">
+                                        <x-icons name="download" />
+                                    </button>
+                                @endif
                             </td>
                             <td>
-                                <button>
-                                    <x-icons name="download" />
-                                </button>
+                                @if ($this->existData($codeq4, $lokasiid))
+                                    <button
+                                        wire:click.prevent="download('{{ $codeq4 }}', '{{ $lokasiid }}')">
+                                        <x-icons name="download" />
+                                    </button>
+                                @endif
                             </td>
                         </tr>
                     @endforeach

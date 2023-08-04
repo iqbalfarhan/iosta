@@ -10,12 +10,11 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('peruntukans', function (Blueprint $table) {
+        Schema::create('barekons', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('lokasi_id')->constrained()->cascadeOnDelete();
-            $table->enum('fungsi', config('ios.listFungsiGedung'))->nullable();
-            $table->enum('klasifikasi', config('ios.listKlasifikasi'));
-            $table->string('peruntukan')->nullable();
+            $table->foreignId('lokasi_id')->constrained()->onDelete('cascade');
+            $table->string('kode_q', 7);
+            $table->string('fileba');
             $table->timestamps();
         });
     }
@@ -25,6 +24,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('peruntukans');
+        Schema::dropIfExists('barekons');
     }
 };

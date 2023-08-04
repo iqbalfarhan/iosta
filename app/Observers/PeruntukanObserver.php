@@ -30,18 +30,18 @@ class PeruntukanObserver
      */
     public function updating(Peruntukan $peruntukan): void
     {
-        $oldata = [
-            'peruntukan_id' => $peruntukan->id,
-            'luas_awal' => $peruntukan->getOriginal('luas'),
-            'luas_baru' => $peruntukan->luas,
-            'klasifikasi_awal' => $peruntukan->getOriginal('klasifikasi'),
-            'klasifikasi_baru' => $peruntukan->klasifikasi,
-            'peruntukan_awal' => $peruntukan->getOriginal('peruntukan'),
-            'peruntukan_baru' => $peruntukan->peruntukan,
-            'fileba' => $peruntukan->fileba,
-        ];
+        // $oldata = [
+        //     'peruntukan_id' => $peruntukan->id,
+        //     'luas_awal' => $peruntukan->getOriginal('luas'),
+        //     'luas_baru' => $peruntukan->luas,
+        //     'klasifikasi_awal' => $peruntukan->getOriginal('klasifikasi'),
+        //     'klasifikasi_baru' => $peruntukan->klasifikasi,
+        //     'peruntukan_awal' => $peruntukan->getOriginal('peruntukan'),
+        //     'peruntukan_baru' => $peruntukan->peruntukan,
+        //     'fileba' => $peruntukan->fileba,
+        // ];
 
-        LogPeruntukan::create($oldata);
+        // LogPeruntukan::create($oldata);
     }
 
     /**

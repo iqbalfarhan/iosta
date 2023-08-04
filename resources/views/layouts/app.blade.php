@@ -31,7 +31,7 @@
         </div>
     @else
         <div class="flex flex-col h-screen bg-base-200 bg-no-repeat bg-center bg-cover backdrop-blur-lg p-6"
-            style="background-image: url('{{ Storage::url('indonesia.svg') }}')">
+            style="background-image: url('{{ Storage::url('indonesia.svg') }}'); background-size:90%;">
             <div class="flex gap-10 absolute">
                 <img src="{{ url('storage/logota.png') }}" alt="">
                 <img src="{{ url('storage/logotelkom.png') }}" alt="">

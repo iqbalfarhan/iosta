@@ -43,11 +43,11 @@ class Sidebar extends Component
                         'icon' => 'users',
                         'route' => 'settings.user'
                     ],
-                    [
-                        'label' => 'Role & permission',
-                        'icon' => 'key',
-                        'route' => 'settings.permission'
-                    ],
+                    // [
+                    //     'label' => 'Role & permission',
+                    //     'icon' => 'key',
+                    //     'route' => 'settings.permission'
+                    // ],
 
                 ]
             ]

@@ -32,7 +32,6 @@ class ObjectSewa extends Component
             'datas' => Peruntukan::when($this->cari, function ($q) {
                 $q->where('peruntukan', 'like', '%' . $this->cari . '%')
                     ->where('fungsi', 'like', '%' . $this->cari . '%')
-                    ->where('status', 'like', '%' . $this->cari . '%')
                     ->where('klasifikasi', 'like', '%' . $this->cari . '%');
             })->get()
         ]);
