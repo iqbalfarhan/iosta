@@ -52,7 +52,7 @@ class LokasiSeeder extends Seeder
             ],
             [
                 "kota" => "MALINAU",
-                "witel" => "KALTARA",
+                "witel" => "TARAKAN",
                 "alamat" => "JL. PERINTIS NO. 1 TIDENG PALE",
                 "nama" => "PLASA TANA TIDUNG"
             ],
@@ -82,7 +82,7 @@ class LokasiSeeder extends Seeder
             ],
             [
                 "kota" => "GAMBUT",
-                "witel" => "KALSEL",
+                "witel" => "BANJARMASIN",
                 "alamat" => "JL. A. YANI KM 13 GAMBUT",
                 "nama" => "STO GAMBUT"
             ],
@@ -118,247 +118,247 @@ class LokasiSeeder extends Seeder
             ],
             [
                 "kota" => "MALINAU",
-                "witel" => "KALTARA",
+                "witel" => "TARAKAN",
                 "alamat" => "JL. PANEMBAHAN NO. 95 MALINAU",
                 "nama" => "CATEL MALINAU"
             ],
             [
                 "kota" => "SUNGAI RAYA",
-                "witel" => "KALBAR",
+                "witel" => "PONTIANAK",
                 "alamat" => "JL. KOMP. PONDOK INDAH LESTARI  NO. 1",
                 "nama" => "STO SUNGAI RAYA"
             ],
             [
                 "kota" => "NUNUKAN",
-                "witel" => "KALTARA",
+                "witel" => "TARAKAN",
                 "alamat" => "JL. TM PAHLAWAN NO. 55 NUNUKAN",
                 "nama" => "CATEL NUNUKAN"
             ],
             [
                 "kota" => "TANJUNG REDED",
-                "witel" => "KALTARA",
+                "witel" => "TARAKAN",
                 "alamat" => "JL. DURIAN II NO. 14 TANJUNG REDEB",
                 "nama" => "DATEL BERAU"
             ],
             [
                 "kota" => "TANJUNG SELOR",
-                "witel" => "KALTARA",
+                "witel" => "TARAKAN",
                 "alamat" => "JL. AGATHIS NO. 2 TANJUNG SELOR",
                 "nama" => "CATEL TANJUNG SELOR"
             ],
             [
                 "kota" => "TARAKAN",
-                "witel" => "KALTARA",
+                "witel" => "TARAKAN",
                 "alamat" => "JL. P DIPONEGORO NO. 08 TARAKAN",
                 "nama" => "STO TARAKAN"
             ],
             [
                 "kota" => "TARAKAN",
-                "witel" => "KALTARA",
+                "witel" => "TARAKAN",
                 "alamat" => "JL. MULAWARMAN NO. 1 TARAKAN",
-                "nama" => "WITEL KALTARA"
+                "nama" => "WITEL TARAKAN"
             ],
             [
                 "kota" => "BANJARBARU",
-                "witel" => "KALSEL",
+                "witel" => "BANJARMASIN",
                 "alamat" => "JL. PM NOOR NO 47 BANJARBARU",
                 "nama" => "TELKOM BANJARBARU"
             ],
             [
                 "kota" => "BANJARMASIN",
-                "witel" => "KALSEL",
+                "witel" => "BANJARMASIN",
                 "alamat" => "JL. DJOK MENTAYA BANJARMASIN",
                 "nama" => "SBB NAGASARI"
             ],
             [
                 "kota" => "BANJARMASIN",
-                "witel" => "KALSEL",
+                "witel" => "BANJARMASIN",
                 "alamat" => "JL. PANGERAN SAMUDERA NO 92",
                 "nama" => "STO 1 CENTRUM"
             ],
             [
                 "kota" => "BARABAI",
-                "witel" => "KALSEL",
+                "witel" => "BANJARMASIN",
                 "alamat" => "JL. MURAKATA NO 2",
                 "nama" => "TELKOM BARABAI"
             ],
             [
                 "kota" => "BATULICIN",
-                "witel" => "KALSEL",
+                "witel" => "BANJARMASIN",
                 "alamat" => "JL. RAYA BATULICIN",
                 "nama" => "TELKOM BATULICIN"
             ],
             [
                 "kota" => "KANDANGAN",
-                "witel" => "KALSEL",
+                "witel" => "BANJARMASIN",
                 "alamat" => "JL. MELATI NO 3",
                 "nama" => "TELKOM KANDANGAN"
             ],
             [
                 "kota" => "KOTABARU PULAU LAUT",
-                "witel" => "KALSEL",
+                "witel" => "BANJARMASIN",
                 "alamat" => "JL. SISINGAMANGARAJA",
                 "nama" => "TELKOM KOTABARU"
             ],
             [
                 "kota" => "PLEIHARI",
-                "witel" => "KALSEL",
+                "witel" => "BANJARMASIN",
                 "alamat" => "JL. BOENYASIN, NO.1 PELAIHARI",
                 "nama" => "PLASA TELKOM PELEHARI"
             ],
             [
                 "kota" => "TANJUNG TABALONG",
-                "witel" => "KALSEL",
+                "witel" => "BANJARMASIN",
                 "alamat" => "JL. PENGHULU RASYID NO 2",
                 "nama" => "TELKOM TANJUNG TABALONG"
             ],
             [
                 "kota" => "SATUI",
-                "witel" => "KALSEL",
+                "witel" => "BANJARMASIN",
                 "alamat" => "JL. INPRES SATUI",
                 "nama" => "TELKOM SATUI "
             ],
             [
                 "kota" => "AMUNTAI",
-                "witel" => "KALSEL",
+                "witel" => "BANJARMASIN",
                 "alamat" => "JL.NORMAN UMAR KEBUN SARI",
                 "nama" => "TELKOM AMUNTAI"
             ],
             [
                 "kota" => "RANTAU",
-                "witel" => "KALSEL",
+                "witel" => "BANJARMASIN",
                 "alamat" => "JL. TELKOM NO 1 RANTAU",
                 "nama" => "TELKOM RANTAU"
             ],
             [
                 "kota" => "ULIN",
-                "witel" => "KALSEL",
+                "witel" => "BANJARMASIN",
                 "alamat" => "JL. AKHMAD YANI KM 3,5 BANJARMASIN",
                 "nama" => "STO ULIN"
             ],
             [
                 "kota" => "BUNTOK",
-                "witel" => "KALTENG",
+                "witel" => "PALANGKARAYA",
                 "alamat" => "JL. PAHLAWAN",
                 "nama" => "STO BUNTOK"
             ],
             [
                 "kota" => "KUALA KAPUAS",
-                "witel" => "KALTENG",
+                "witel" => "PALANGKARAYA",
                 "alamat" => "JL. TAMBUN BUNGAI NO 1",
                 "nama" => "STO KUALA KAPUAS"
             ],
             [
                 "kota" => "MUARA TEWEH",
-                "witel" => "KALTENG",
+                "witel" => "PALANGKARAYA",
                 "alamat" => "JL. A. YANI",
                 "nama" => "STO MUARA TEWEH"
             ],
             [
                 "kota" => "PALANGKARAYA KM2",
-                "witel" => "KALTENG",
+                "witel" => "PALANGKARAYA",
                 "alamat" => "JL. CEMPAKA NO 22",
                 "nama" => "ARNET PALANGKARAYA"
             ],
             [
                 "kota" => "PALANGKARAYA KM 5",
-                "witel" => "KALTENG",
+                "witel" => "PALANGKARAYA",
                 "alamat" => "JL. DANAU MARE 1 UJUNG",
                 "nama" => "STO PALANGKARYA KM 5"
             ],
             [
                 "kota" => "PALANGKARAYA KM2",
-                "witel" => "KALTENG",
+                "witel" => "PALANGKARAYA",
                 "alamat" => "JL. IMAM BONJOL NO. 2",
                 "nama" => "STO PALANGKARAYA"
             ],
             [
                 "kota" => "PANGKALAN BUN",
-                "witel" => "KALTENG",
+                "witel" => "PALANGKARAYA",
                 "alamat" => "JL. SULTAN SYAHRIR",
                 "nama" => "STO PANGKALANBUN"
             ],
             [
                 "kota" => "KUALA KURUN",
-                "witel" => "KALTENG",
+                "witel" => "PALANGKARAYA",
                 "alamat" => "JL. A YANI NO. 22",
                 "nama" => "STO KUALA KURUN "
             ],
             [
                 "kota" => "KUALA PAMBUANG",
-                "witel" => "KALTENG",
+                "witel" => "PALANGKARAYA",
                 "alamat" => "JL. D.I PANJAITAN",
                 "nama" => "STO KUALA PAMBUANG "
             ],
             [
                 "kota" => "TAMIYANG LAYANG",
-                "witel" => "KALTENG",
+                "witel" => "PALANGKARAYA",
                 "alamat" => "JL. MANUNGAL NO 38",
                 "nama" => "STO TAMIYANG LAYANG "
             ],
             [
                 "kota" => "PURUK CAHU",
-                "witel" => "KALTENG",
+                "witel" => "PALANGKARAYA",
                 "alamat" => "JL. TEMANGGUNG AWAN",
                 "nama" => "STO PURUK CAHU"
             ],
             [
                 "kota" => "SAMPIT",
-                "witel" => "KALTENG",
+                "witel" => "PALANGKARAYA",
                 "alamat" => "JL. SUPRAPTO",
                 "nama" => "STO SAMPIT"
             ],
             [
                 "kota" => "KETAPANG",
-                "witel" => "KALBAR",
+                "witel" => "PONTIANAK",
                 "alamat" => "JL. S PARMAN NO. 82",
                 "nama" => "TELKOM KETAPANG"
             ],
             [
                 "kota" => "MEMPAWAH",
-                "witel" => "KALBAR",
+                "witel" => "PONTIANAK",
                 "alamat" => "JL. GUSTI M.TOUFIQ",
                 "nama" => "TELKOM MEMPAWAH"
             ],
             [
                 "kota" => "PONTIANAK",
-                "witel" => "KALBAR",
+                "witel" => "PONTIANAK",
                 "alamat" => "JL. AHMAD YANI NO. 5",
                 "nama" => "EX INFRATEL PONTIANAK"
             ],
             [
                 "kota" => "PONTIANAK",
-                "witel" => "KALBAR",
+                "witel" => "PONTIANAK",
                 "alamat" => "JL. TEUKU UMAR NO. 2",
                 "nama" => "WITEL PONTIANAK"
             ],
             [
                 "kota" => "SAMBAS",
-                "witel" => "KALBAR",
+                "witel" => "PONTIANAK",
                 "alamat" => "JL. PANJI ANOM NO. 82",
                 "nama" => "TELKOM SAMBAS"
             ],
             [
                 "kota" => "SANGGAU",
-                "witel" => "KALBAR",
+                "witel" => "PONTIANAK",
                 "alamat" => "JL. A. YANI NO 25",
                 "nama" => "STO SANGGAU"
             ],
             [
                 "kota" => "NGABANG",
-                "witel" => "KALBAR",
+                "witel" => "PONTIANAK",
                 "alamat" => "JL. KARYA NGABANG, NGABANG - LANDAK, KAB. LANDAK",
                 "nama" => "STO NGABANG"
             ],
             [
                 "kota" => "SINGKAWANG",
-                "witel" => "KALBAR",
+                "witel" => "PONTIANAK",
                 "alamat" => "JL. SWADAYA PESIRAM",
                 "nama" => "TELKOM SINGKAWANG"
             ],
             [
                 "kota" => "SINTANG",
-                "witel" => "KALBAR",
+                "witel" => "PONTIANAK",
                 "alamat" => "JL. DIPONEGORO NO. 62",
                 "nama" => "TELKOM SINTANG"
             ],

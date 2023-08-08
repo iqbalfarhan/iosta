@@ -24,13 +24,6 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('profile') }}">
-                        <x-icons name="cog" />
-                        <span>Theme settings</span>
-                    </a>
-                </li>
-                <li></li>
-                <li>
                     <a wire:click.prevent="$emit('logout')">
                         <x-icons name="logout" />
                         <span>Keluar aplikasi</span>

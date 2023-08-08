@@ -44,15 +44,15 @@
                     @foreach ($data->peruntukans as $key => $item)
                         <tr>
                             <th>{{ $key + 1 }}</th>
-                            <td>{{ $item->fungsi }}</td>
-                            <td>{{ $item->lastlog->luas }}</td>
-                            <td>{{ $item->lastlog->br }}</td>
-                            <td>{{ $item->lastlog->sc }}</td>
-                            <td>{{ $item->klasifikasi }}</td>
-                            <td>{{ $item->peruntukan }}</td>
-                            <td>{{ $item->lastlog->status }}</td>
-                            <td>{{ $item->lastlog->durasi }} bulan</td>
-                            <td>{{ $item->lastlog->layanan }}</td>
+                            <td>{{ $item->fungsi ?? '' }}</td>
+                            <td>{{ $item->lastlog->luas ?? '' }}</td>
+                            <td>{{ $item->lastlog->br ?? '' }}</td>
+                            <td>{{ $item->lastlog->sc ?? '' }}</td>
+                            <td>{{ $item->klasifikasi ?? '' }}</td>
+                            <td>{{ $item->peruntukan ?? '' }}</td>
+                            <td>{{ $item->lastlog->status ?? '' }}</td>
+                            <td>{{ $item->lastlog->durasi ?? '' }} bulan</td>
+                            <td>{{ $item->lastlog->layanan ?? '' }}</td>
                             <td>
                                 @if ($item->fileba)
                                     <button class="btn btn-xs"

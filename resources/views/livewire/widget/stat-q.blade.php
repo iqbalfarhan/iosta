@@ -1,5 +1,5 @@
 <div>
-    <label class="stats flex flex-col lg:flex-row bg-base-100 rounded-xl w-full" for="modalquartal">
+    <label class="stats flex flex-row bg-base-100 rounded-xl w-full" for="modalquartal">
         <div class="stat">
             <div class="stat-title">Sesi sekarang</div>
             <div class="stat-value">Q{{ $periode['q'] }}

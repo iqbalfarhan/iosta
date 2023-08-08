@@ -9,10 +9,10 @@
             </div>
             <div class="divider m-0 p-0"></div>
             <div class="card-body">
-                <div class="grid grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <div class="form-control">
                         <label for="" class="label">
-                            <span class="label-text">Pilih gedung</span>
+                            <span class="label-text">Pilih STO</span>
                         </label>
                         <select class="select bg-base-200 @error('lokasi_id') select-error @enderror"
                             wire:model="lokasi_id">
@@ -91,13 +91,14 @@
         <div class="card w-full bg-base-100">
             <div class="card-body">
                 <div class="flex flex-col">
-                    <h3 class="card-title">Input hasil pengukuran {{ $quartal['code'] }}</h3>
-                    <span class="text-sm">input hasil pengukuran sesuai dengan Berita acara rekonisiliasi</span>
+                    <h3 class="card-title">Input hasil tambah kurang {{ $quartal['code'] }}</h3>
+                    <span class="text-sm">input hasil pengukuran tambah kurang sesuai dengan Berita acara
+                        rekonisiliasi</span>
                 </div>
             </div>
             <div class="divider m-0 p-0"></div>
             <div class="card-body">
-                <div class="grid grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <div class="form-control">
                         <label for="" class="label">
                             <span class="label-text">Luas pengukuran baru :</span>
@@ -145,7 +146,7 @@
                     </div>
                     <div class="form-control">
                         <label for="" class="label">
-                            <span class="label-text">Upload BA Rekon:</span>
+                            <span class="label-text">Upload BA Tambah kurang:</span>
                         </label>
                         <input type="file" wire:model="fileba" placeholder="Upload BA" accept="application/pdf"
                             class="file-input file-input-ghost bg-base-200 @error('fileba') input-error @enderror">

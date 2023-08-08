@@ -17,7 +17,7 @@ class Sidebar extends Component
                         'route' => 'home'
                     ],
                     [
-                        'label' => 'Update data',
+                        'label' => 'Update tambah kurang',
                         'icon' => 'edit',
                         'route' => 'ubahdata'
                     ],
@@ -26,11 +26,6 @@ class Sidebar extends Component
                         'icon' => 'upload',
                         'route' => 'upload-ba'
                     ],
-                    // [
-                    //     'label' => 'File BA Rekon',
-                    //     'icon' => 'folder',
-                    //     'route' => 'ba-rekon'
-                    // ],
                 ],
                 'Pengaturan' => [
                     [
@@ -43,11 +38,14 @@ class Sidebar extends Component
                         'icon' => 'users',
                         'route' => 'settings.user'
                     ],
-                    // [
-                    //     'label' => 'Role & permission',
-                    //     'icon' => 'key',
-                    //     'route' => 'settings.permission'
-                    // ],
+
+                ],
+                'Account' => [
+                    [
+                        'label' => 'Edit Profile',
+                        'icon' => 'user',
+                        'route' => 'profile'
+                    ],
 
                 ]
             ]

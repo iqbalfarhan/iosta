@@ -1,7 +1,7 @@
-<div class="w-full flex flex-col gap-6">
+<div class="flex flex-col gap-6">
 
-    <div class="grid grid-cols-4 gap-6">
-        <div class="col-span-2">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <div class="col-span-1 lg:col-span-2">
             @livewire('widget.stat-q')
         </div>
 

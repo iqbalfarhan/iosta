@@ -28,8 +28,8 @@ class Ubahdata extends Component
     public $br;
     public $sc;
     public $status;
-    public $durasi;
-    public $layanan;
+    public $durasi = 3;
+    public $layanan = 4;
 
     protected $fillable = [
         'reload' => '$refresh'

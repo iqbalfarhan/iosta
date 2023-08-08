@@ -1,4 +1,4 @@
-<div class="grid grid-cols-3 gap-6">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
     <div>
         <form class="card bg-base-100" wire:submit.prevent="uploadba">
             <div class="card-body">
@@ -7,6 +7,20 @@
                     Upload BA ({{ $witel }})
                 </div>
                 <div class="py-4 flex flex-col gap-2">
+                    <div class="form-control">
+                        <label for="" class="label">
+                            <span class="label-text">Pilih Periode</span>
+                        </label>
+
+                        <select class="select bg-base-200 @error('lokasi_id') select-error @enderror"
+                            wire:model="lokasi_id">
+                            <option value="">---</option>
+                            <option value="">Q1-2023</option>
+                            <option value="">Q2-2023</option>
+                            <option value="">Q3-2023</option>
+                            <option value="">Q4-2023</option>
+                        </select>
+                    </div>
                     <div class="form-control">
                         <label for="" class="label">
                             <span class="label-text">Pilih STO</span>
@@ -41,7 +55,7 @@
         </form>
     </div>
 
-    <div class="col-span-2">
+    <div class="lg:col-span-2">
         <div class="overflow-x-auto bg-base-100 rounded-2xl">
             <table class="table text-center">
                 <thead class="bg-base-300">
@@ -65,7 +79,7 @@
                             $codeq4 = 'q4-' . $year;
                         @endphp
                         <tr>
-                            <td class="text-left">{{ $lokasiname }}</td>
+                            <td class="text-left whitespace-nowrap">{{ $lokasiname }}</td>
                             <td>
                                 @if ($this->existData($codeq1, $lokasiid))
                                     <button wire:click.prevent="download('{{ $codeq1 }}', '{{ $lokasiid }}')">

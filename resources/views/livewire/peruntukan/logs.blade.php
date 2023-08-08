@@ -19,6 +19,7 @@
                     <th>status</th>
                     <th>durasi</th>
                     <th>layanan</th>
+                    <th>created at</th>
                     <th>Download file</th>
                     <th>Edit</th>
                 </tr>
@@ -34,6 +35,7 @@
                         <td>{{ $data->status }}</td>
                         <td>{{ $data->durasi }}</td>
                         <td>{{ $data->layanan }}</td>
+                        <td>{{ $data->created_at }}</td>
                         <td>
                             <button class="btn btn-xs">
                                 <x-icons name="download" />
