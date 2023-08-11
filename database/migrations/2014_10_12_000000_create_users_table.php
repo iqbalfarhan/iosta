@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->string('witel')->nullable();
             $table->string('photo')->nullable();
             $table->boolean('darkmode')->default(false);
+            $table->boolean('is_admin')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

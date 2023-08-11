@@ -11,31 +11,31 @@
         </div>
     </div>
 
-    <div class="flex justify-between">
-        <div class="flex gap-6 items-center">
-            <span>Filter:</span>
-            <select class="bg-transparent text-sm text-right">
-                @foreach (config('ios.listWitel') as $wtl)
-                    <option value="{{ $wtl == 'REGIONAL' ? '' : $wtl }}">{{ $wtl }}</option>
-                @endforeach
-            </select>
-            <select class="bg-transparent text-sm">
-                <option value="">Semua kota</option>
-            </select>
-        </div>
-        <div>
-            <span class="text-sm">{{ $datas->count() }} lokasi</span>
-        </div>
-    </div>
 
     <div class="overflow-x-auto">
+        <div class="flex justify-between mb-3">
+            <div class="flex gap-6 items-center">
+                <span>Filter:</span>
+                <select class="bg-transparent text-sm text-right" wire:model="witel">
+                    @foreach (config('ios.listWitel') as $wtl)
+                        <option value="{{ $wtl == 'REGIONAL' ? '' : $wtl }}">{{ $wtl }}</option>
+                    @endforeach
+                </select>
+                <select class="bg-transparent text-sm">
+                    <option value="">Semua kota</option>
+                </select>
+            </div>
+            <div>
+                <span class="text-sm">{{ $datas->count() }} lokasi</span>
+            </div>
+        </div>
         <table class="table table-sm bg-base-100">
             <thead class="bg-base-300">
                 <th></th>
                 <th>Witel</th>
-                <th>Alamat</th>
                 <th>Nama STO</th>
-                <th>Klasifikasi</th>
+                <th>Alamat</th>
+                <th>Peruntukan</th>
                 <th></th>
             </thead>
             <tbody>
@@ -43,7 +43,6 @@
                     <tr>
                         <th>{{ $key + 1 }}</th>
                         <td>{{ $data->witel }}</td>
-                        <td>{{ $data->alamat }}</td>
                         <td>
                             <div class="flex items-center gap-2">
                                 <div class="avatar">
@@ -54,6 +53,7 @@
                                 {{ $data->nama }}
                             </div>
                         </td>
+                        <td>{{ $data->alamat }}</td>
                         <td>{{ $data->peruntukans_count }}</td>
                         <td>
                             <a href="{{ route('settings.lokasi.detail', $data->id) }}"
@@ -61,8 +61,8 @@
                                 <x-icons name="folder" />
                             </a>
                             <button wire:click.prevent="hapusLokasi('{{ $data->id }}')"
-                                class="btn btn-xs btn-ghost btn-circle">
-                                <x-icons name="close" />
+                                class="btn btn-xs btn-ghost btn-circle text-error">
+                                <x-icons name="trash" />
                             </button>
                         </td>
                     </tr>

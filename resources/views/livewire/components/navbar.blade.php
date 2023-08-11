@@ -1,4 +1,4 @@
-<div class="navbar bg-base-100">
+<div class="navbar bg-base-100 w-full">
     <div class="navbar-start">
         <label for="drawer" class="btn btn-circle btn-ghost">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -12,7 +12,7 @@
     </div>
     <div class="navbar-end gap-2">
         @livewire('components.theme-switcher')
-        <div class="dropdown dropdown-end hidden lg:block">
+        <div class="dropdown dropdown-end">
             <label tabindex="0" class="btn btn-sm btn-neutral btn-circle">
                 {{ $initial }}
             </label>

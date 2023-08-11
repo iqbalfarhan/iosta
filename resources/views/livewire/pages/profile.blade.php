@@ -14,8 +14,7 @@
                         <span>Area {{ auth()->user()->witel }}</span>
                     </div>
                 </div>
-
-                <button class="btn btn-primary" wire:click.prevent="$emit('logout')">
+                <button class="btn btn-neutral btn-sm" wire:click.prevent="$emit('logout')">
                     <x-icons name="logout" />
                     logout
                 </button>

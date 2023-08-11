@@ -7,9 +7,10 @@
 @layer base {
     html {
         /* font-family: "Poppins", sans-serif; */
-        @apply font-mono
+        @apply text-sm font-mono;
     }
-    th, td{
-        @apply whitespace-nowrap
+    th,
+    td {
+        @apply whitespace-nowrap;
     }
 }

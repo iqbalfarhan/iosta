@@ -31,9 +31,16 @@
                 <th>Kelas</th>
             </thead>
             <thead>
-                <th></th>
+                <th>
+                    <div class="tooltip z-[1]" data-tip="reset filter">
+                        <button class="btn btn-xs btn-error btn-circle" wire:click.prevent="resetFilter">
+                            <x-icons name="close" />
+                        </button>
+                    </div>
+                </th>
                 <th>
                     <select class="select select-xs w-full bg-base-200" wire:model="witel">
+                        <option value="">---</option>
                         @foreach ($witels as $wtl)
                             <option value="{{ $wtl }}">{{ $wtl }}</option>
                         @endforeach
@@ -41,6 +48,7 @@
                 </th>
                 <th>
                     <select class="select select-xs w-full bg-base-200" wire:model="lokasi_id">
+                        <option value="">---</option>
                         @foreach ($lokasis as $lksid => $lksnama)
                             <option value="{{ $lksid }}">{{ $lksnama }}</option>
                         @endforeach
@@ -48,6 +56,7 @@
                 </th>
                 <th>
                     <select class="select select-xs w-full bg-base-200" wire:model="fungsi">
+                        <option value="">---</option>
                         @foreach (config('ios.listFungsiGedung') as $fn)
                             <option value="{{ $fn }}">{{ $fn }}</option>
                         @endforeach
@@ -55,14 +64,19 @@
                 </th>
                 <th>
                     <select class="select select-xs w-full bg-base-200" wire:model="klasifikasi">
+                        <option value="">---</option>
                         @foreach (config('ios.listKlasifikasi') as $kl)
                             <option value="{{ $kl }}">{{ $kl }}</option>
                         @endforeach
                     </select>
                 </th>
                 <th>
-                    <input type="text" class="input input-xs w-full bg-base-200" wire:model="peruntukan">
+                    <input type="text" class="input input-xs w-full bg-base-200" wire:model="peruntukan"
+                        placeholder="---">
                 </th>
+                <th></th>
+                <th></th>
+                <th></th>
             </thead>
             <tbody>
                 @forelse ($datas as $key => $item)
@@ -77,7 +91,7 @@
                         </td>
                         <td>{{ $item->fungsi }}</td>
                         <td>{{ $item->klasifikasi }}</td>
-                        <td>{{ $item->peruntukan }}</td>
+                        <td>{{ Str::limit($item->peruntukan, 20) }}</td>
                         <td>
                             <a class="tooltip cursor-pointer" data-tip="Selisih {{ $item->luasStatus()['diff'] }}">
                                 {{ $item->lastlog->luas ?? '' }}

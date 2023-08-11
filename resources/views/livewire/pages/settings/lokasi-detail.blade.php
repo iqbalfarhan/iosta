@@ -28,11 +28,11 @@
                     <tr class="bg-base-300">
                         <th></th>
                         <th>Fungsi</th>
+                        <th>klasifikasi</th>
+                        <th>peruntukan</th>
                         <th>Luas</th>
                         <th>BR</th>
                         <th>SC</th>
-                        <th>klasifikasi</th>
-                        <th>peruntukan</th>
                         <th>status</th>
                         <th>Durasi</th>
                         <th>kelas layanan</th>
@@ -45,11 +45,11 @@
                         <tr>
                             <th>{{ $key + 1 }}</th>
                             <td>{{ $item->fungsi ?? '' }}</td>
+                            <td>{{ $item->klasifikasi ?? '' }}</td>
+                            <td>{{ $item->peruntukan ?? '' }}</td>
                             <td>{{ $item->lastlog->luas ?? '' }}</td>
                             <td>{{ $item->lastlog->br ?? '' }}</td>
                             <td>{{ $item->lastlog->sc ?? '' }}</td>
-                            <td>{{ $item->klasifikasi ?? '' }}</td>
-                            <td>{{ $item->peruntukan ?? '' }}</td>
                             <td>{{ $item->lastlog->status ?? '' }}</td>
                             <td>{{ $item->lastlog->durasi ?? '' }} bulan</td>
                             <td>{{ $item->lastlog->layanan ?? '' }}</td>

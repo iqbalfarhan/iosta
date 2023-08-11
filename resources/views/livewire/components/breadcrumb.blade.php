@@ -1,4 +1,4 @@
-<div class="text-sm hidden lg:block breadcrumbs mx-4">
+<div class="text-sm hidden lg:block breadcrumbs mb-4">
     <ul>
         <li>{{ $witel }}</li>
         @foreach ($datas as $segment)

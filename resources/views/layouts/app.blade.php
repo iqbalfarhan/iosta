@@ -11,13 +11,14 @@
 
 <body>
     @auth
-        <div class="drawer bg-base-200" data-theme="{{ auth()->user()->darkmode ? 'dark' : 'light' }}">
+        <div class="drawer drawer-open bg-base-200" data-theme="{{ auth()->user()->darkmode ? 'dark' : 'light' }}">
             <input id="drawer" type="checkbox" class="drawer-toggle" />
-            <div class="drawer-content flex flex-col flex-1 min-h-screen">
+            <div class="drawer-content flex flex-col flex-1 min-h-screen w-full">
                 @livewire('components.navbar')
-                <div class="flex flex-1 flex-col p-6 gap-6 bg-no-repeat bg-center bg-cover bg-fixed"
+                <div class="flex flex-1 flex-col p-6 gap-6 bg-no-repeat bg-center bg-cover bg-fixed w-full"
                     style="background-image: url('{{ Storage::url('indonesia.svg') }}'); background-size:90%;">
                     <div class="container mx-auto max-w-7xl">
+                        @livewire('components.breadcrumb')
                         {{ $slot }}
                     </div>
                     @livewire('components.footer')

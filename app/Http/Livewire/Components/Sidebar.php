@@ -22,9 +22,14 @@ class Sidebar extends Component
                         'route' => 'ubahdata'
                     ],
                     [
-                        'label' => 'Upload BA Rekon',
-                        'icon' => 'upload',
+                        'label' => 'Update BA rekon',
+                        'icon' => 'edit',
                         'route' => 'upload-ba'
+                    ],
+                    [
+                        'label' => 'Data BA Rekon',
+                        'icon' => 'upload',
+                        'route' => 'ba-rekon'
                     ],
                 ],
                 'Pengaturan' => [
@@ -38,16 +43,21 @@ class Sidebar extends Component
                         'icon' => 'users',
                         'route' => 'settings.user'
                     ],
-
-                ],
-                'Account' => [
                     [
-                        'label' => 'Edit Profile',
-                        'icon' => 'user',
-                        'route' => 'profile'
+                        'label' => 'Role & permission',
+                        'icon' => 'key',
+                        'route' => 'settings.user'
                     ],
 
-                ]
+                ],
+                // 'Account' => [
+                //     [
+                //         'label' => 'Edit Profile',
+                //         'icon' => 'user',
+                //         'route' => 'profile'
+                //     ],
+
+                // ]
             ]
         ]);
     }

@@ -11,7 +11,7 @@
                 <span class="label-text">Username</span>
             </label>
             <input type="text" wire:model="data.username" placeholder="Username"
-                class="input shadow w-full bg-base-200 @error('data.username') input-error @enderror" />
+                class="input shadow w-full bg-base-100 @error('data.username') input-error @enderror" />
         </div>
 
         <div class="form-control">
@@ -19,7 +19,7 @@
                 <span class="label-text">Password</span>
             </label>
             <input type="password" wire:model="data.password" placeholder="Password"
-                class="input shadow w-full bg-base-200 @error('data.password') input-error @enderror" />
+                class="input shadow w-full bg-base-100 @error('data.password') input-error @enderror" />
         </div>
     </div>
 

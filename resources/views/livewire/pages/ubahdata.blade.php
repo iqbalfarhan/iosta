@@ -3,7 +3,7 @@
         <div class="card w-full bg-base-100">
             <div class="card-body">
                 <div>
-                    <h3 class="card-title">PIlih peruntukan yang akan diupdate Q{{ $quartal['q'] }}</h3>
+                    <h3 class="card-title">Pilih peruntukan yang akan diupdate Q{{ $quartal['q'] }}</h3>
                     <span class="text-sm">Witel disesuaikan dengan witel saat ini ({{ auth()->user()->witel }}).</span>
                 </div>
             </div>

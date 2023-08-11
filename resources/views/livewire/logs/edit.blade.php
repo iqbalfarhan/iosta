@@ -52,7 +52,7 @@
             </div>
             <div class="card-actions">
                 <button class="btn btn-primary" type="submit">
-                    <x-icons name="simpan" />
+                    <x-icons name="check" />
                     Simpan
                 </button>
             </div>

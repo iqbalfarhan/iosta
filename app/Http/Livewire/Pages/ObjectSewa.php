@@ -21,6 +21,7 @@ class ObjectSewa extends Component
     public $fungsi;
     public $klasifikasi;
     public $peruntukan;
+    public $status;
 
     public function hapusPeruntukan(Peruntukan $peruntukan)
     {
@@ -36,6 +37,7 @@ class ObjectSewa extends Component
             $this->witel = "";
         } else {
             $this->witels = [$witel];
+            $this->witel = $witel;
         }
     }
 
@@ -64,17 +66,29 @@ class ObjectSewa extends Component
         return Excel::download(new LogPeruntukanExport, 'object sewa.xlsx');
     }
 
+    public function resetFilter()
+    {
+        $this->reset([
+            'lokasi_id',
+            'fungsi',
+            'klasifikasi',
+            'peruntukan',
+        ]);
+    }
+
     public function render()
     {
         $datas = Peruntukan::when($this->peruntukan, function ($q) {
-            $q->where('peruntukan', 'like', '%' . $this->cari . '%');
-        })->when($this->witel, function ($q) {
-            $q->lokasi->where('witel', $this->witel);
+            $q->where('peruntukan', 'like', '%' . $this->peruntukan . '%');
+        })->when($this->klasifikasi, function ($q) {
+            $q->where('klasifikasi', $this->klasifikasi);
+        })->when($this->fungsi, function ($q) {
+            $q->where('fungsi', $this->fungsi);
         })->get();
 
         return view('livewire.pages.object-sewa', [
             'datas' => $datas,
-            'lokasis' => Lokasi::where('witel', $this->witel)->get()->pluck('gedung', 'id')
+            'lokasis' => Lokasi::where('witel', $this->witel)->get()->pluck('nama', 'id')
         ]);
     }
 }

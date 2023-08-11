@@ -5,19 +5,25 @@ namespace App\Http\Livewire\Pages;
 use App\Helpers\Quartal;
 use App\Models\Barekon;
 use App\Models\Lokasi;
-use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
 class UploadBa extends Component
 {
     use WithFileUploads;
+
+    public $lokasi_id;
     public $witel;
     public $witels;
-    public $lokasi_id;
     public $fileba;
+    public $luas;
+    public $br;
+    public $sc;
+    public $status;
+    public $durasi = 3;
+    public $layanan = 4;
 
-    protected $listeners = [
+    protected $fillable = [
         'reload' => '$refresh'
     ];
 
@@ -26,57 +32,53 @@ class UploadBa extends Component
         $witel = auth()->user()->witel;
 
         if ($witel == "REGIONAL") {
-            $this->witel = $witel;
-            $this->witels = config('app.listWitel');
+            $this->witels = config('ios.listWitel');
         } else {
             $this->witels = [$witel];
         }
+        $this->witel = $witel;
     }
 
-    public function existData($kode_q, $lokasi_id)
+    public function simpan()
     {
-        return Barekon::where('lokasi_id', $lokasi_id)->where('kode_q', $kode_q)->first() ? true : false;
-    }
-
-    public function uploadba()
-    {
-        $valid = $this->validate([
+        $this->validate([
             'lokasi_id' => 'required',
-            'fileba' => 'required',
+            'luas' => 'required',
+            'br' => '',
+            'sc' => '',
+            'status' => '',
+            'durasi' => '',
+            'layanan' => '',
+            'fileba' => '',
         ]);
 
-        $filename = $this->fileba->hashName('barekon');
-        $this->fileba->store('barekon');
-
-        $valid['fileba'] = $filename;
-        $valid['kode_q'] = Quartal::now()['code'];
-
-        Barekon::create($valid);
-        $this->reset([
-            'fileba',
-            'lokasi_id',
-        ]);
-        $this->emit('reload');
-    }
-
-    public function download($kode_q, $lokasi_id)
-    {
-        $barekon = Barekon::where('lokasi_id', $lokasi_id)->where('kode_q', $kode_q)->first();
-        if ($barekon) {
-            $filename = implode(' - ', [
-                'IOSTA',
-                $barekon->kode_q,
-                $barekon->lokasi->nama,
-            ]);
-            return Storage::download($barekon->fileba, $filename);
+        if ($this->fileba) {
+            $filename = $this->fileba->hashName('barekon');
+            $this->fileba->store('barekon');
         }
+
+        $create = [
+            'kode_q' => Quartal::now()['code'],
+            'lokasi_id' => $this->lokasi_id,
+            'luas' => $this->luas,
+            'br' => $this->br,
+            'sc' => $this->sc,
+            'status' => $this->status,
+            'durasi' => $this->durasi,
+            'layanan' => $this->layanan,
+            'fileba' => $filename ?? null,
+        ];
+
+        Barekon::create($create);
+
+        return redirect()->route('ba-rekon');
     }
 
     public function render()
     {
         return view('livewire.pages.upload-ba', [
-            'lokasis' => $this->witels ? Lokasi::whereIn('witel', $this->witels)->get()->pluck('nama', 'id') : [],
-            'year' => date('Y')
+            'gedungs' => Lokasi::where('witel', $this->witel)->get()->pluck('nama', 'id'),
+            'quartal' => Quartal::now()
         ]);
     }
 }
