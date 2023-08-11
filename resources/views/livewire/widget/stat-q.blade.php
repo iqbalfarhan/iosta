@@ -46,7 +46,7 @@
                 </table>
             </div>
             <div class="modal-action">
-                <label for="modalquartal" class="btn">Close!</label>
+                <label for="modalquartal" class="btn">Close</label>
             </div>
         </div>
     </div>

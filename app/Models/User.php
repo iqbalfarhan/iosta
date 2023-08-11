@@ -46,6 +46,12 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    public function getFirstNameAttribute()
+    {
+        $name_parts = explode(" ", $this->name);
+        return $name_parts[0];
+    }
+
     public function getInitialAttribute(): string
     {
         $words = explode(" ", $this->name);

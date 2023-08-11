@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->enum('fungsi', config('ios.listFungsiGedung'))->nullable();
             $table->enum('klasifikasi', config('ios.listKlasifikasi'));
             $table->string('peruntukan')->nullable();
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }

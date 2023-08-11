@@ -30,19 +30,19 @@ class UserSeeder extends Seeder
             [
                 "username" => "20971132",
                 "name" => "AKHMAD NOOR",
-                "witel" => "KALSEL",
+                "witel" => "BANJARMASIN",
                 "password" => Hash::make("appiosta")
             ],
             [
                 "username" => "18900213",
                 "name" => "JAERULI",
-                "witel" => "KALTENG",
+                "witel" => "PALANGKARAYA",
                 "password" => Hash::make("appiosta")
             ],
             [
                 "username" => "18970400",
                 "name" => "SETIAWAN BONARDO TEGUH SITORUS",
-                "witel" => "KALBAR",
+                "witel" => "PONTIANAK",
                 "password" => Hash::make("appiosta")
             ],
             [
@@ -54,7 +54,7 @@ class UserSeeder extends Seeder
             [
                 "username" => "20900353",
                 "name" => "MUHAMMAD HAIRIL",
-                "witel" => "KALTARA",
+                "witel" => "TARAKAN",
                 "password" => Hash::make("appiosta")
             ],
             [

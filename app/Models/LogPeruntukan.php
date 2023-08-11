@@ -19,6 +19,7 @@ class LogPeruntukan extends Model
         'durasi',
         'layanan',
         'fileba',
+        'photo',
     ];
 
     public function peruntukan()

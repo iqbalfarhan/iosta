@@ -14,7 +14,14 @@ return new class extends Migration {
             $table->id();
             $table->foreignId('lokasi_id')->constrained()->onDelete('cascade');
             $table->string('kode_q', 7);
-            $table->string('fileba');
+            $table->string('luas')->nullable();
+            $table->string('br')->nullable();
+            $table->string('sc')->nullable();
+            $table->string('status')->nullable();
+            $table->string('durasi')->nullable();
+            $table->string('layanan')->nullable();
+            $table->string('fileba')->nullable();
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }

@@ -1,36 +1,65 @@
-<div class="flex flex-col gap-6">
-    <div class="flex justify-between gap-6">
-        <div class="flex flex-1">
-            <input type="text" placeholder="Cari user dengan nama, email, username atau witel" class="input w-full" />
-        </div>
-        <div>
-            <button class="btn btn-square btn-primary">
-                <x-icons name="plus" size="5" />
-            </button>
-        </div>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        @foreach ($datas as $data)
-            <div class="card card-compact w-full bg-base-100">
-                <div class="card-body gap-4">
-                    <div class="flex justify-between">
-                        <div class="avatar placeholder">
-                            <div class="bg-neutral-focus text-neutral-content rounded-full w-10">
-                                <span class="text-lg">{{ $data->initial }}</span>
+<div class="overflow-x-auto bg-base-100 rounded-xl">
+    <table class="table table-sm">
+        <thead class="bg-base-300">
+            <th>No</th>
+            <th>Initial</th>
+            <th>username</th>
+            <th>Name</th>
+            <th>witel</th>
+            <th>created_at</th>
+            <th>Action</th>
+        </thead>
+        <thead>
+            <th></th>
+            <th></th>
+            <th>
+                <input type="text" class="input input-xs bg-base-200" placeholder="search" wire:model="username">
+            </th>
+            <th>
+                <input type="text" class="input input-xs bg-base-200" placeholder="search" wire:model="name">
+            </th>
+            <th>
+                <select class="select select-xs bg-base-200" wire:model="witel">
+                    <option value="">Pilih witel</option>
+                    @foreach (config('ios.listWitel') as $wtl)
+                        <option value="{{ $wtl }}">{{ $wtl }}</option>
+                    @endforeach
+                </select>
+            </th>
+            <th></th>
+            <th> </select>
+            </th>
+        </thead>
+        <tbody>
+            @foreach ($datas as $data)
+                <tr>
+                    <td>{{ $data->id }}</td>
+                    <td class="font-mono">{{ $data->initial }}</td>
+                    <td class="font-mono">{{ $data->username }}</td>
+                    <td>{{ $data->name }}</td>
+                    <td>{{ $data->witel }}</td>
+                    <td>{{ $data->created_at }}</td>
+                    <td>
+                        <div class="flex">
+                            <div class="tooltip" data-tip="edit">
+                                <button class="btn btn-square btn-ghost btn-xs">
+                                    <x-icons name="edit" />
+                                </button>
+                            </div>
+                            <div class="tooltip" data-tip="reset password">
+                                <button class="btn btn-square btn-ghost btn-xs">
+                                    <x-icons name="key" />
+                                </button>
+                            </div>
+                            <div class="tooltip" data-tip="hapus">
+                                <button class="btn btn-square btn-ghost btn-xs text-error">
+                                    <x-icons name="trash" />
+                                </button>
                             </div>
                         </div>
-                        <div class="card-actions justify-end">
-                            <button class="btn btn-circle btn-sm">
-                                <x-icons name="edit" />
-                            </button>
-                        </div>
-                    </div>
-                    <div class="flex flex-col">
-                        <b class="font-semibold truncate">{{ $data->name }}</b>
-                        <i class="text-xs truncate">{{ $data->username }} - {{ $data->witel }}</i>
-                    </div>
-                </div>
-            </div>
-        @endforeach
-    </div>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 </div>

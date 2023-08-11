@@ -14,7 +14,7 @@ class Icons extends Component
 
     public $name;
     public $class;
-    public function __construct($name = null, $size = null)
+    public function __construct($name = null, $size = null, $class = null)
     {
         $this->name = $name;
         $classname = implode("", [
@@ -23,6 +23,8 @@ class Icons extends Component
             " ",
             "h-",
             $size,
+            " ",
+            $class
         ]);
         $this->class = $size !== null ? $classname : "w-4 h-4";
 

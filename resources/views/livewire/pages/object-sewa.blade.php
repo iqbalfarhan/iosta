@@ -1,21 +1,25 @@
-{{-- <div class="overflow-x-auto">
-    
-</div> --}}
-
-
-<div class="card card-compact bg-base-100">
-    <div class="card-body">
-        <div class="flex flex-col gap-6">
-            <input type="text" placeholder="Cari object sewa dengan gedung, fungsi, klasifikasi atau nama peruntukan"
-                class="input input-sm w-full bg-base-200" wire:model="cari" />
+<div class="card card-compact bg-base-100 w-full">
+    <div class="card-body flex flex-row justify-between">
+        <div class="card-title">Data peruntukan {{ $witel }}</div>
+        <div>
+            <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-success btn-sm">
+                    <x-icons name="download" size="4" />
+                    Download
+                </label>
+                <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-200 rounded-box w-52">
+                    <li><button wire:click.prevent="downloadPdf">Download PDF</button></li>
+                    <li><button wire:click.prevent="downloadExcel">Download Excel</button></li>
+                </ul>
+            </div>
         </div>
     </div>
-    <div class="overflow-x-auto">
-        <table class="table table-sm">
+    <div class="overflow-x-auto w-full">
+        <table class="table table-sm w-full">
             <thead class="bg-base-300">
                 <th></th>
                 <th>Witel</th>
-                <th>Gedung</th>
+                <th>STO</th>
                 <th>Fungsi</th>
                 <th>klasifikasi</th>
                 <th>Peruntukan</th>
@@ -26,8 +30,42 @@
                 <th>Q</th>
                 <th>Kelas</th>
             </thead>
+            <thead>
+                <th></th>
+                <th>
+                    <select class="select select-xs w-full bg-base-200" wire:model="witel">
+                        @foreach ($witels as $wtl)
+                            <option value="{{ $wtl }}">{{ $wtl }}</option>
+                        @endforeach
+                    </select>
+                </th>
+                <th>
+                    <select class="select select-xs w-full bg-base-200" wire:model="lokasi_id">
+                        @foreach ($lokasis as $lksid => $lksnama)
+                            <option value="{{ $lksid }}">{{ $lksnama }}</option>
+                        @endforeach
+                    </select>
+                </th>
+                <th>
+                    <select class="select select-xs w-full bg-base-200" wire:model="fungsi">
+                        @foreach (config('ios.listFungsiGedung') as $fn)
+                            <option value="{{ $fn }}">{{ $fn }}</option>
+                        @endforeach
+                    </select>
+                </th>
+                <th>
+                    <select class="select select-xs w-full bg-base-200" wire:model="klasifikasi">
+                        @foreach (config('ios.listKlasifikasi') as $kl)
+                            <option value="{{ $kl }}">{{ $kl }}</option>
+                        @endforeach
+                    </select>
+                </th>
+                <th>
+                    <input type="text" class="input input-xs w-full bg-base-200" wire:model="peruntukan">
+                </th>
+            </thead>
             <tbody>
-                @foreach ($datas as $key => $item)
+                @forelse ($datas as $key => $item)
                     <tr>
                         <th>{{ $key + 1 }}</th>
                         <td>{{ $item->lokasi->witel }}</td>
@@ -51,7 +89,11 @@
                         <td>{{ $item->lastlog->kode_q ?? '' }}</td>
                         <td>{{ $item->lastlog->layanan ?? '' }}</td>
                     </tr>
-                @endforeach
+                @empty
+                    <tr>
+                        <td colspan="12" class="text-center">Tidak ada data yang ditemukan</td>
+                    </tr>
+                @endforelse
             </tbody>
         </table>
     </div>

@@ -14,6 +14,7 @@ class Peruntukan extends Model
         'fungsi',
         'klasifikasi',
         'peruntukan',
+        'photo',
     ];
 
     public function lokasi()

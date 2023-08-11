@@ -8,6 +8,10 @@
         <div>
             @livewire('widget.stat-gedung')
         </div>
+
+        <div>
+            @livewire('widget.stat-profile')
+        </div>
     </div>
 
     @livewire('pages.object-sewa')

@@ -56,64 +56,73 @@
     </div>
 
     <div class="lg:col-span-2">
-        <div class="overflow-x-auto bg-base-100 rounded-2xl">
-            <table class="table text-center">
-                <thead class="bg-base-300">
-                    <tr>
-                        <th rowspan="2">STO</th>
-                        <th colspan="4">{{ $year }}</th>
-                    </tr>
-                    <tr>
-                        <th>Q1</th>
-                        <th>Q2</th>
-                        <th>Q3</th>
-                        <th>Q4</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($lokasis as $lokasiid => $lokasiname)
-                        @php
-                            $codeq1 = 'q1-' . $year;
-                            $codeq2 = 'q2-' . $year;
-                            $codeq3 = 'q3-' . $year;
-                            $codeq4 = 'q4-' . $year;
-                        @endphp
-                        <tr>
-                            <td class="text-left whitespace-nowrap">{{ $lokasiname }}</td>
-                            <td>
-                                @if ($this->existData($codeq1, $lokasiid))
-                                    <button wire:click.prevent="download('{{ $codeq1 }}', '{{ $lokasiid }}')">
-                                        <x-icons name="download" />
-                                    </button>
-                                @endif
-                            </td>
-                            <td>
-                                @if ($this->existData($codeq2, $lokasiid))
-                                    <button wire:click.prevent="download('{{ $codeq2 }}', '{{ $lokasiid }}')">
-                                        <x-icons name="download" />
-                                    </button>
-                                @endif
-                            </td>
-                            <td>
-                                @if ($this->existData($codeq3, $lokasiid))
-                                    <button
-                                        wire:click.prevent="download('{{ $codeq3 }}', '{{ $lokasiid }}')">
-                                        <x-icons name="download" />
-                                    </button>
-                                @endif
-                            </td>
-                            <td>
-                                @if ($this->existData($codeq4, $lokasiid))
-                                    <button
-                                        wire:click.prevent="download('{{ $codeq4 }}', '{{ $lokasiid }}')">
-                                        <x-icons name="download" />
-                                    </button>
-                                @endif
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
+        <div class="card card-compact bg-base-100">
+            <div class="card-body">
+                <div class="card-title">
+                    lorem ipsum
+                </div>
+                <div class="overflow-x-auto bg-base-100 rounded-2xl">
+                    <table class="table text-center">
+                        <thead class="bg-base-300">
+                            <tr>
+                                <th rowspan="2">STO</th>
+                                <th colspan="4">{{ $year }}</th>
+                            </tr>
+                            <tr>
+                                <th>Q1</th>
+                                <th>Q2</th>
+                                <th>Q3</th>
+                                <th>Q4</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($lokasis as $lokasiid => $lokasiname)
+                                @php
+                                    $codeq1 = 'q1-' . $year;
+                                    $codeq2 = 'q2-' . $year;
+                                    $codeq3 = 'q3-' . $year;
+                                    $codeq4 = 'q4-' . $year;
+                                @endphp
+                                <tr>
+                                    <td class="text-left whitespace-nowrap">{{ $lokasiname }}</td>
+                                    <td>
+                                        @if ($this->existData($codeq1, $lokasiid))
+                                            <button
+                                                wire:click.prevent="download('{{ $codeq1 }}', '{{ $lokasiid }}')">
+                                                <x-icons name="download" />
+                                            </button>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if ($this->existData($codeq2, $lokasiid))
+                                            <button
+                                                wire:click.prevent="download('{{ $codeq2 }}', '{{ $lokasiid }}')">
+                                                <x-icons name="download" />
+                                            </button>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if ($this->existData($codeq3, $lokasiid))
+                                            <button
+                                                wire:click.prevent="download('{{ $codeq3 }}', '{{ $lokasiid }}')">
+                                                <x-icons name="download" />
+                                            </button>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if ($this->existData($codeq4, $lokasiid))
+                                            <button
+                                                wire:click.prevent="download('{{ $codeq4 }}', '{{ $lokasiid }}')">
+                                                <x-icons name="download" />
+                                            </button>
+                                        @endif
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 

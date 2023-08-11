@@ -162,6 +162,7 @@ return [
 
         Intervention\Image\ImageServiceProvider::class,
         App\Providers\QuartalServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
 
             /*
              * Application Service Providers...
@@ -188,6 +189,7 @@ return [
         // 'Example' => App\Facades\Example::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Quartal' => App\Helpers\Quartal::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ])->toArray(),
 
 ];

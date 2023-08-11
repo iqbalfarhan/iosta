@@ -13,6 +13,7 @@ class UploadBa extends Component
 {
     use WithFileUploads;
     public $witel;
+    public $witels;
     public $lokasi_id;
     public $fileba;
 
@@ -22,7 +23,14 @@ class UploadBa extends Component
 
     public function mount()
     {
-        $this->witel = auth()->user()->witel;
+        $witel = auth()->user()->witel;
+
+        if ($witel == "REGIONAL") {
+            $this->witel = $witel;
+            $this->witels = config('app.listWitel');
+        } else {
+            $this->witels = [$witel];
+        }
     }
 
     public function existData($kode_q, $lokasi_id)
@@ -67,7 +75,7 @@ class UploadBa extends Component
     public function render()
     {
         return view('livewire.pages.upload-ba', [
-            'lokasis' => Lokasi::where('witel', $this->witel)->get()->pluck('nama', 'id'),
+            'lokasis' => $this->witels ? Lokasi::whereIn('witel', $this->witels)->get()->pluck('nama', 'id') : [],
             'year' => date('Y')
         ]);
     }
