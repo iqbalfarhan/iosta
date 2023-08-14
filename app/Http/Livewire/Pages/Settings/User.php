@@ -27,6 +27,11 @@ class User extends Component
         $this->emit('reload');
     }
 
+    function editUser(UserModel $user)
+    {
+        $this->emit('editUser', $user);
+    }
+
     function resetPassword(UserModel $user)
     {
         $user->update([

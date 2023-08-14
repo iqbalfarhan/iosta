@@ -37,17 +37,13 @@
                         <td>{{ $index + 1 }}</td>
                         <td>{{ $data->witel ?? '' }}</td>
                         <td>{{ $data->nama ?? '' }}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td>
-                            <a href=""><x-icons name="download" /></a>
-                        </td>
-                        <td>
-                            <a href=""><x-icons name="download" /></a>
-                        </td>
-                        <td>
-                            <a href=""><x-icons name="download" /></a>
-                        </td>
-                        <td>
-                            <a href=""><x-icons name="download" /></a>
+                            <a href="">
+                                <x-icons name="download" />
+                            </a>
                         </td>
                     </tr>
                 @endforeach

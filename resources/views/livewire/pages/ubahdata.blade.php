@@ -106,19 +106,21 @@
                         <input type="number" step="0.01" wire:model="luas" placeholder="Luas hasil pengukuran"
                             class="input bg-base-200 @error('luas') input-error @enderror">
                     </div>
-                    <div class="form-control">
-                        <label for="" class="label">
-                            <span class="label-text">BR :</span>
-                        </label>
-                        <input type="number" step="0.01" wire:model="br" placeholder="BR hasil pengukuran"
-                            class="input bg-base-200 @error('br') input-error @enderror">
-                    </div>
-                    <div class="form-control">
-                        <label for="" class="label">
-                            <span class="label-text">SC :</span>
-                        </label>
-                        <input type="number" step="0.01" wire:model="sc" placeholder="SC hasil pengukuran"
-                            class="input bg-base-200 @error('sc') input-error @enderror">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="form-control">
+                            <label for="" class="label">
+                                <span class="label-text">BR :</span>
+                            </label>
+                            <input type="number" step="0.01" wire:model="br" placeholder="BR hasil pengukuran"
+                                class="input bg-base-200 @error('br') input-error @enderror">
+                        </div>
+                        <div class="form-control">
+                            <label for="" class="label">
+                                <span class="label-text">SC :</span>
+                            </label>
+                            <input type="number" step="0.01" wire:model="sc" placeholder="SC hasil pengukuran"
+                                class="input bg-base-200 @error('sc') input-error @enderror">
+                        </div>
                     </div>
                     <div class="form-control">
                         <label for="" class="label">
@@ -130,19 +132,21 @@
                             <option value="existing">Existing</option>
                         </select>
                     </div>
-                    <div class="form-control">
-                        <label for="" class="label">
-                            <span class="label-text">Durasi :</span>
-                        </label>
-                        <input type="number" step="0.01" wire:model="durasi" placeholder="Durasi sewa"
-                            class="input bg-base-200 @error('durasi') input-error @enderror">
-                    </div>
-                    <div class="form-control">
-                        <label for="" class="label">
-                            <span class="label-text">Layanan :</span>
-                        </label>
-                        <input type="number" step="0.01" wire:model="layanan" placeholder="Layanan"
-                            class="input bg-base-200 @error('layanan') input-error @enderror">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="form-control">
+                            <label for="" class="label">
+                                <span class="label-text">Durasi :</span>
+                            </label>
+                            <input type="number" step="0.01" wire:model="durasi" placeholder="Durasi sewa"
+                                class="input bg-base-200 @error('durasi') input-error @enderror">
+                        </div>
+                        <div class="form-control">
+                            <label for="" class="label">
+                                <span class="label-text">Layanan :</span>
+                            </label>
+                            <input type="number" step="0.01" wire:model="layanan" placeholder="Layanan"
+                                class="input bg-base-200 @error('layanan') input-error @enderror">
+                        </div>
                     </div>
                     <div class="form-control">
                         <label for="" class="label">

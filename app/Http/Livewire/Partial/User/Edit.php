@@ -10,18 +10,24 @@ use Spatie\Permission\Models\Role;
 class Edit extends Component
 {
     protected $listeners = [
-        'showCreateModal'
+        'editUser'
     ];
     public $show = false;
+    public $data;
     public $name;
     public $username;
     public $witel;
-    public $password = "iosta2023";
     public $role = "guest";
 
-    function showCreateModal()
+    function editUser(User $user)
     {
+        $this->data = $user;
         $this->show = true;
+
+        $this->name = $user->name;
+        $this->username = $user->username;
+        $this->witel = $user->witel;
+        $this->role = $user->getRoleNames()->first();
     }
 
     public function simpan()
@@ -30,15 +36,13 @@ class Edit extends Component
             'name' => 'required',
             'username' => 'required',
             'witel' => 'required',
-            'password' => 'required',
             'role' => 'required',
         ]);
 
-        $valid['password'] = Hash::make($this->password);
+        $user = User::find($this->data->id);
+        $user->update($valid);
 
-        $new = User::create($valid);
-
-        $new->assignRole($this->role);
+        $user->syncRoles($this->role);
 
         $this->emit('reload');
         $this->reset();

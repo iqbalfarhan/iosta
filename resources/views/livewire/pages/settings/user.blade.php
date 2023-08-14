@@ -10,6 +10,7 @@
                 <th>Name</th>
                 <th>witel</th>
                 <th>created_at</th>
+                <th>roles</th>
                 <th>Action</th>
             </thead>
             <thead>
@@ -29,6 +30,7 @@
                     </select>
                 </th>
                 <th></th>
+                <th></th>
                 <th><button class="btn btn-primary btn-xs" wire:click.prevent="resetFilter">reset</button></th>
             </thead>
             <tbody>
@@ -39,10 +41,12 @@
                         <td>{{ $data->name }}</td>
                         <td>{{ $data->witel }}</td>
                         <td>{{ $data->created_at }}</td>
+                        <td>{{ implode(', ', $data->getRoleNames()->toArray()) }}</td>
                         <td>
                             <div class="flex">
                                 <div class="tooltip" data-tip="edit">
-                                    <button class="btn btn-square btn-ghost btn-xs">
+                                    <button class="btn btn-square btn-ghost btn-xs"
+                                        wire:click.prevent="editUser({{ $data->id }})">
                                         <x-icons name="edit" />
                                     </button>
                                 </div>
@@ -69,4 +73,5 @@
     <p class="text-sm">saat direset, password user akan menjadi "iosta2023" </p>
 
     @livewire('partial.user.create')
+    @livewire('partial.user.edit')
 </div>
