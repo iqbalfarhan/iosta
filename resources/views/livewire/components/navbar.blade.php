@@ -11,7 +11,6 @@
         <a href="{{ route('home') }}" class="btn btn-ghost normal-case text-xl">{{ config('app.name') }}</a>
     </div>
     <div class="navbar-end gap-2">
-        @livewire('components.theme-switcher')
         <div class="dropdown dropdown-end">
             <label tabindex="0" class="btn btn-sm btn-neutral btn-circle">
                 {{ $initial }}
@@ -23,6 +22,8 @@
                         <span>Update profile</span>
                     </a>
                 </li>
+                @livewire('components.theme-switcher')
+                <li></li>
                 <li>
                     <a wire:click.prevent="$emit('logout')">
                         <x-icons name="logout" />

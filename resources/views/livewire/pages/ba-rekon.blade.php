@@ -1,20 +1,14 @@
 <div class="flex flex-col gap-6">
-    <div>
-        <button class="btn btn-primary">
-            <x-icons name="plus" />
-            <span>Upload BA Rekon regional</span>
-        </button>
-    </div>
     <div class="overflow-x-auto bg-base-100">
         <table class="table table-sm">
-            <thead class="bg-base-300">
-                <tr>
+            <thead>
+                <tr class="bg-base-300">
                     <th rowspan="2">No</th>
                     <th rowspan="2">Witel</th>
                     <th rowspan="2">STO / Gedung</th>
                     <th colspan="4">Periode 2023</th>
                 </tr>
-                <tr>
+                <tr class="bg-base-300">
                     <th>Q1</th>
                     <th>Q2</th>
                     <th>Q3</th>

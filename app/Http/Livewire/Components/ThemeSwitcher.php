@@ -6,7 +6,6 @@ use Livewire\Component;
 
 class ThemeSwitcher extends Component
 {
-
     public $theme;
 
     public function mount()
@@ -14,11 +13,16 @@ class ThemeSwitcher extends Component
         $this->theme = auth()->user()->darkmode;
     }
 
-    public function updatedTheme($value)
+    public function updateTheme($value)
     {
-        auth()->user()->update([
-            'darkmode' => $value
+        $this->validate([
+            'theme' => 'required'
         ]);
+
+        auth()->user()->update([
+            'darkmode' => $value == 'dark' ? true : false
+        ]);
+
         $this->emit('reload');
         return redirect(request()->header('Referer'));
     }

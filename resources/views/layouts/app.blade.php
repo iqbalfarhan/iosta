@@ -11,7 +11,7 @@
 
 <body>
     @auth
-        <div class="drawer drawer-open bg-base-200" data-theme="{{ auth()->user()->darkmode ? 'dark' : 'light' }}">
+        <div class="drawer lg:drawer-open bg-base-200" data-theme="{{ auth()->user()->darkmode ? 'dark' : 'light' }}">
             <input id="drawer" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content flex flex-col flex-1 min-h-screen w-full">
                 @livewire('components.navbar')

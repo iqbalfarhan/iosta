@@ -163,6 +163,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         App\Providers\QuartalServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
 
             /*
              * Application Service Providers...

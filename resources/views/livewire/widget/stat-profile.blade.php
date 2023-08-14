@@ -1,4 +1,4 @@
-<a href="{{ route('profile') }}" class="stats w-full">
+<a href="{{ route('profile') }}" class="stats w-full h-full">
     <div class="stat">
         <div class="stat-figure text-secondary">
             <div class="avatar placeholder">
@@ -7,7 +7,7 @@
                 </div>
             </div>
         </div>
-        <div class="stat-value">{{ $user->first_name }}</div>
+        <div class="stat-value text-xl">{{ $user->first_name }}</div>
         <div class="stat-title">{{ $user->username }}</div>
         <div class="stat-desc text-secondary">{{ $user->witel }}</div>
     </div>

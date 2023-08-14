@@ -78,12 +78,20 @@ class UserSeeder extends Seeder
         ];
 
         foreach ($users as $user) {
-            User::create([
+            $new = User::create([
                 "username" => $user['username'],
                 "name" => $user["name"],
                 "password" => $user['password'],
                 "witel" => $user['witel'],
             ]);
+
+            if ($new->username == "admin") {
+                $new->assignRole('developer');
+            } elseif ($new->witel == "REGIONAL") {
+                $new->assignRole('admin');
+            } else {
+                $new->assignRole('user');
+            }
         }
     }
 }
