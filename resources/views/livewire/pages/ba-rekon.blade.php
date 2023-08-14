@@ -15,10 +15,10 @@
                     <th>Q4</th>
                 </tr>
             </thead>
-            <thead>
+            <thead class="bg-base-200">
                 <th></th>
                 <th>
-                    <select class="select select-xs bg-base-200" wire:model="witel">
+                    <select class="select select-xs bg-base-100 w-full" wire:model="witel">
                         <option value="">REGIONAL</option>
                         @foreach (config('ios.listWitel') as $wtl)
                             @if ($wtl != 'REGIONAL')
@@ -28,8 +28,12 @@
                     </select>
                 </th>
                 <th>
-                    <input type="text" class="input input-xs bg-base-200" wire:model="sto" placeholder="---">
+                    <input type="text" class="input input-xs bg-base-100 w-full" wire:model="sto" placeholder="---">
                 </th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
             </thead>
             <tbody>
                 @foreach ($datas as $index => $data)
@@ -37,13 +41,33 @@
                         <td>{{ $index + 1 }}</td>
                         <td>{{ $data->witel ?? '' }}</td>
                         <td>{{ $data->nama ?? '' }}</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
                         <td>
-                            <a href="">
-                                <x-icons name="download" />
-                            </a>
+                            @if (\App\Models\Barekon::where('kode_q', 'q1-2023')->where('lokasi_id', $data->id)->exists())
+                                <a href="">
+                                    <x-icons name="download" />
+                                </a>
+                            @endif
+                        </td>
+                        <td>
+                            @if (\App\Models\Barekon::where('kode_q', 'q2-2023')->where('lokasi_id', $data->id)->exists())
+                                <a href="">
+                                    <x-icons name="download" />
+                                </a>
+                            @endif
+                        </td>
+                        <td>
+                            @if (\App\Models\Barekon::where('kode_q', 'q3-2023')->where('lokasi_id', $data->id)->exists())
+                                <a href="">
+                                    <x-icons name="download" />
+                                </a>
+                            @endif
+                        </td>
+                        <td>
+                            @if (\App\Models\Barekon::where('kode_q', 'q4-2023')->where('lokasi_id', $data->id)->exists())
+                                <a href="">
+                                    <x-icons name="download" />
+                                </a>
+                            @endif
                         </td>
                     </tr>
                 @endforeach

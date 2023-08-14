@@ -1,4 +1,4 @@
-<div class="card card-compact bg-base-100 w-full">
+<div class="card card-compact bg-base-100 w-full max-w-sx overflow-hidden">
     <div class="card-body flex flex-row justify-between">
         <div class="card-title">Data peruntukan {{ $witel }}</div>
         <div>
