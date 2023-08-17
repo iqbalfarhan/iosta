@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PdfController;
 use App\Http\Livewire\Pages\BaRekon;
 use App\Http\Livewire\Pages\Welcome;
 use App\Http\Livewire\Pages\Profile;
@@ -47,6 +48,8 @@ Route::middleware('auth')->group(function () {
   Route::get('/peruntukan/{peruntukan}/logs', Logs::class)->name('peruntukan.logs');
   Route::get('/logs/{logperuntukan}/edit', \App\Http\Livewire\Logs\Edit::class)->name('logs.edit');
   Route::get('/upload-ba', UploadBa::class)->name('upload-ba');
+
+  Route::get('/pdf/peruntukan', [PdfController::class, 'peruntukan'])->name('pdf.peruntukan');
 
   Route::prefix('setting')->group(function () {
     Route::get('/user', User::class)->name('settings.user');

@@ -3,11 +3,8 @@
 namespace App\Http\Livewire\Pages;
 
 use App\Exports\LogPeruntukanExport;
-use App\Models\LogPeruntukan;
 use App\Models\Lokasi;
 use App\Models\Peruntukan;
-// use Barryvdh\DomPDF\Facade\Pdf;
-use Barryvdh\DomPDF\PDF;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Maatwebsite\Excel\Facades\Excel;
@@ -54,11 +51,7 @@ class ObjectSewa extends Component
 
     public function downloadPdf()
     {
-        $datas = LogPeruntukan::get();
-        $pdf = \Barryvdh\DomPDF\Facade\Pdf::loadView('layouts.templates.excel', [
-            'datas' => $datas
-        ]);
-        return $pdf->download('invoice.pdf');
+        return redirect()->route('pdf.peruntukan');
     }
 
     public function downloadExcel()
