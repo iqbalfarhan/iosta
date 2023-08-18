@@ -7,7 +7,7 @@
 @layer base {
     html {
         /* font-family: "Poppins", sans-serif; */
-        @apply text-sm font-mono;
+        @apply text-sm;
     }
     th,
     td {

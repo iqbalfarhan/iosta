@@ -1,5 +1,5 @@
 <ul class="menu p-2 w-80 h-full bg-base-100">
-    <div class="menu">
+    <div class="menu lg:hidden">
         <div class="">
             <label for="drawer" class="btn btn-circle self-end">
                 <x-icons name="close" size="5" />

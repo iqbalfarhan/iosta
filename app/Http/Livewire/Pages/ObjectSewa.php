@@ -77,6 +77,10 @@ class ObjectSewa extends Component
             $q->where('klasifikasi', $this->klasifikasi);
         })->when($this->fungsi, function ($q) {
             $q->where('fungsi', $this->fungsi);
+        })->when($this->witel, function ($q) {
+            $q->whereHas('lokasi', function ($subQuery) {
+                $subQuery->where('witel', $this->witel);
+            });
         })->get();
 
         return view('livewire.pages.object-sewa', [
