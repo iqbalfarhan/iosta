@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Quartal;
 use App\Models\LogPeruntukan;
 use Barryvdh\DomPDF\Facade\Pdf;
 
@@ -9,11 +10,20 @@ class PdfController extends Controller
 {
     public function peruntukan()
     {
-        $pdf = Pdf::loadView('layouts/templates/peruntukan', [
-            'datas' => LogPeruntukan::get()
-        ]);
-        return $pdf->download('peruntukan.pdf');
+        $quartal = Quartal::now();
 
-        // return view('layouts/templates/peruntukan', ['datas' => LogPeruntukan::get()]);
+        $pdf = Pdf::loadView('layouts/templates/peruntukan', [
+            'datas' => LogPeruntukan::get(),
+            'quartal' => $quartal
+        ]);
+
+        $filename = implode('-', [
+            'IOSTA',
+            'PERUNTUKAN',
+            strtoupper($quartal['code']),
+            time()
+        ]);
+
+        return $pdf->download($filename . '.pdf');
     }
 }

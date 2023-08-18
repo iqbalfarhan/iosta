@@ -21,7 +21,8 @@
 </head>
 
 <body>
-    <h1>Peruntukan Q3</h1>
+    <h1 style="text-align: center">PENGGUNAAN RUANG KERJA PT.TELKOM AKSES REGIONAL VI BA PERIODE TRIWULAN
+        {{ strtoupper($quartal['code']) }}</h1>
     <table border="1" class="table">
         <thead>
             <tr>
