@@ -13,7 +13,7 @@ class PdfController extends Controller
         $pdf = Pdf::loadView('layouts/templates/peruntukan', [
             'datas' => LogPeruntukan::get()
         ]);
-        return $pdf->download('invoice.pdf');
+        return $pdf->download('peruntukan.pdf');
 
         // return view('layouts/templates/peruntukan', ['datas' => LogPeruntukan::get()]);
     }
